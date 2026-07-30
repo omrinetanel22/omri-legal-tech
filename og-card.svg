@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fcfb"/>
+      <stop offset="0.58" stop-color="#eaf6f3"/>
+      <stop offset="1" stop-color="#d7eeea"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#123d5c"/>
+      <stop offset="1" stop-color="#08233d"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#102f4f" flood-opacity=".18"/>
+    </filter>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#102f4f" stroke-opacity=".045"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="80" cy="160" r="245" fill="none" stroke="#1a8f8a" stroke-opacity=".12" stroke-width="2"/>
+  <circle cx="80" cy="160" r="175" fill="none" stroke="#1a8f8a" stroke-opacity=".1" stroke-width="2"/>
+
+  <g transform="translate(75 96)">
+    <rect width="400" height="438" rx="30" fill="#eef4f4" stroke="#fff" stroke-width="8"/>
+    <rect x="48" y="62" width="304" height="320" rx="4" fill="#fff"/>
+    <rect x="254" y="93" width="62" height="62" rx="14" fill="url(#brand)"/>
+    <rect x="267" y="106" width="36" height="36" rx="8" fill="none" stroke="#d4a74d" stroke-opacity=".8"/>
+    <rect x="95" y="184" width="202" height="14" rx="7" fill="#173f5e"/>
+    <rect x="95" y="222" width="218" height="8" rx="4" fill="#cfdbdf"/>
+    <rect x="95" y="249" width="218" height="8" rx="4" fill="#cfdbdf"/>
+    <rect x="95" y="276" width="157" height="8" rx="4" fill="#cfdbdf"/>
+    <rect x="95" y="317" width="218" height="3" rx="2" fill="#d4a74d"/>
+    <circle cx="366" cy="39" r="15" fill="#d9f3ed"/>
+    <path d="m359 39 5 5 9-11" fill="none" stroke="#168679" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="Arial, DejaVu Sans, sans-serif" direction="rtl" text-anchor="start">
+    <rect x="865" y="76" width="258" height="44" rx="22" fill="#fff" fill-opacity=".78" stroke="#1a8f8a" stroke-opacity=".17"/>
+    <circle cx="1097" cy="98" r="6" fill="#27b3a6"/>
+    <text x="1080" y="104" fill="#1a8f8a" font-size="17" font-weight="700">סדר במסמכים. ביטחון במערכות.</text>
+    <text x="1125" y="204" fill="#08233d" font-size="65" font-weight="700">מסתבכים עם מסמכים,</text>
+    <text x="1125" y="286" fill="#1a8f8a" font-size="65" font-weight="700">מערכות מקוונות או קבצים?</text>
+    <text x="1125" y="368" fill="#08233d" font-size="65" font-weight="700">יש מי שיעזור.</text>
+    <text x="1125" y="426" fill="#5f7180" font-size="23">סיוע אישי, מקצועי וסבלני, שלב אחר שלב</text>
+  </g>
+
+  <g transform="translate(829 487)">
+    <rect width="296" height="72" rx="17" fill="url(#brand)"/>
+    <rect x="239" y="14" width="44" height="44" rx="12" fill="#1a8f8a"/>
+    <text x="261" y="43" fill="#fff" font-family="Georgia, serif" font-size="17" text-anchor="middle">נע</text>
+    <g font-family="Arial, DejaVu Sans, sans-serif" direction="rtl" text-anchor="start">
+      <text x="222" y="32" fill="#fff" font-size="20" font-weight="700">עומרי נתנאל</text>
+      <text x="222" y="52" fill="#b9cad4" font-size="13">משפטנות ומחשוב</text>
+    </g>
+  </g>
+</svg>
