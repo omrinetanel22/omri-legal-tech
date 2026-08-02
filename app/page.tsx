@@ -4,38 +4,9 @@ import { useEffect, useState } from "react";
 
 const phoneDisplay = "050-6455360";
 const phoneHref = "+972506455360";
+const smsHref = `sms:${phoneHref}`;
 const whatsappHref =
   "https://wa.me/972506455360?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A2%D7%95%D7%9E%D7%A8%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%90%D7%99%D7%AA%D7%9A%20%D7%90%D7%9D%20%D7%94%D7%A9%D7%99%D7%A8%D7%95%D7%AA%20%D7%A9%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%2F%D7%94%20%D7%9E%D7%AA%D7%90%D7%99%D7%9D.";
-
-const chatScenarios = [
-  {
-    label: "מסמך לא ברור",
-    messages: [
-      ["client", "קיבלתי מסמך ואני לא מבין מה רוצים ממני."],
-      ["client", "אני בכלל צריך עורך דין בשביל זה?"],
-      ["omri", "שלח לי צילום ונעשה סדר."],
-      ["omri", "נבדוק מה נדרש. אם צריך עורך דין, אגיד לך."],
-    ],
-  },
-  {
-    label: "חיסכון בזמן ובכסף",
-    messages: [
-      ["client", "יש לי מסמך, כמה קבצים ומערכת שאני לא מסתדר איתה."],
-      ["client", "אני לא רוצה לשלם על משהו שאפשר לעשות לבד."],
-      ["omri", "שלח לי צילום ונעשה סדר."],
-      ["omri", "נבין מה אפשר לבצע לבד ובמה באמת דרוש בעל מקצוע."],
-    ],
-  },
-  {
-    label: "חשש מטעות",
-    messages: [
-      ["client", "אני מפחד להעלות קובץ לא נכון או לפספס משהו."],
-      ["client", "הכול אצלי מבולגן ואני לא יודע מאיפה להתחיל."],
-      ["omri", "נעבור על זה יחד, שלב אחר שלב."],
-      ["omri", "במידת הצורך אפשר להתחבר למחשב שלך באישורך ובנוכחותך."],
-    ],
-  },
-] as const;
 
 const systems = [
   ["⚖️", "נט המשפט", "צפייה, הורדה וסיוע טכני בהעלאת מסמכים"],
@@ -48,7 +19,94 @@ const systems = [
   ["🏛️", "ביטוח לאומי", "האזור האישי והעלאת מסמכים"],
 ];
 
+const whatsappScenarios = [
+  {
+    id: "document",
+    tab: "מסמך לא ברור",
+    icon: "✦",
+    messages: [
+      ["client", "קיבלתי מסמך ואני לא מבין מה רוצים ממני."],
+      ["client", "אני בכלל צריך עורך דין בשביל זה?"],
+      ["omri", "שלח לי צילום ונעשה סדר."],
+      ["omri", "נבדוק מה נדרש. אם צריך עורך דין, אגיד לך."],
+    ],
+  },
+  {
+    id: "saving",
+    tab: "חיסכון בזמן ובכסף",
+    icon: "₪",
+    messages: [
+      ["client", "יש לי כמה קבצים ומערכת שאני לא מסתדר איתה."],
+      ["client", "אני לא רוצה לשלם על משהו שאפשר לעשות לבד."],
+      ["omri", "שלח לי צילום ונעשה סדר."],
+      ["omri", "נבין מה אפשר לבצע לבד ובמה באמת דרוש בעל מקצוע."],
+    ],
+  },
+  {
+    id: "remote",
+    tab: "חשש מטעות",
+    icon: "✓",
+    messages: [
+      ["client", "אני מפחד להעלות קובץ לא נכון ולא יודע איפה ללחוץ."],
+      ["omri", "אפשר להתחבר אליך מרחוק ולעבור על זה יחד."],
+      ["omri", "אתה רואה את כל הפעולות ויכול לעצור את החיבור בכל רגע."],
+    ],
+  },
+];
+
 const serviceGroups = [
+  {
+    icon: "⏱️",
+    title: "חיסכון בזמן בהכנה ובהגשת מסמכים",
+    intro:
+      "במקום לבזבז שעות על ניסוח, סידור קבצים ומערכות מסורבלות, מקבלים סיוע ממוקד שמקדם את המשימה עד לסיום הטכני שלה.",
+    items: [
+      ["✍️", "ניסוח, עריכה וליטוש לפי התוכן וההנחיות שמסר הלקוח"],
+      ["📑", "סידור מסמכים, נספחים וכותרות בצורה ברורה"],
+      ["🏠", "הפקת נסח טאבו לפי פרטי הנכס שמוסר הלקוח"],
+      ["🏢", "הפקת נסח חברה ותדפיסי חברה"],
+      ["✉️", "הכנת מכתב על בסיס התוכן וההנחיות שמוסר הלקוח"],
+      ["✨", "עריכת מסמך בצורה פורמלית, ברורה ומכובדת"],
+      ["🧩", "איחוד, פיצול והמרת קובצי Word ו־PDF"],
+      ["📤", "הכנת הקבצים וסיוע טכני בהעלאתם למערכת"],
+      ["✅", "בדיקה טכנית שהקבצים צורפו, נקלטו ונפתחים"],
+      ["⏱️", "חיסכון בזמן והתמודדות מהירה עם פעולות מסורבלות"],
+      ["🖥️", "אפשרות לסיוע מרחוק על המחשב של הלקוח"],
+      ["👣", "ליווי ברור ושלב אחר שלב עד להשלמת הפעולה"],
+    ],
+  },
+  {
+    icon: "◉",
+    title: "סיוע מרחוק במחשב",
+    intro:
+      "מתחברים למחשב שלכם רק באישורכם, ועוברים יחד על הפעולה בזמן אמת, כשהשליטה נשארת בידיכם.",
+    items: [
+      ["✓", "התחברות מרחוק רק לאחר אישור מפורש"],
+      ["◉", "עבודה במערכות מקוונות בזמן אמת"],
+      ["↗", "סיוע בהעלאה, הורדה וסידור קבצים"],
+      ["⌁", "פתרון תקלות Word ו־PDF"],
+      ["👁", "הלקוח רואה את כל הפעולות בזמן החיבור"],
+      ["■", "ניתן לעצור את החיבור בכל רגע"],
+      ["◎", "הדרכה מעשית תוך כדי העבודה"],
+      ["⌂", "שירות נוח מכל מקום בארץ"],
+    ],
+  },
+  {
+    icon: "◇",
+    title: "בניית אתרי תדמית לעסקים",
+    intro:
+      "אתר מקצועי ונקי כמו האתר הזה, שמציג את העסק, השירותים ודרכי יצירת הקשר ועובד מצוין גם בטלפון.",
+    items: [
+      ["◇", "אתר תדמית מותאם לעסק ולשפה שלו"],
+      ["▣", "עיצוב מותאם למחשב ולטלפון"],
+      ["💬", "כפתורי WhatsApp ויצירת קשר"],
+      ["↗", "פרסום האתר בכתובת אינטרנט קבועה"],
+      ["◎", "חיבור לדומיין אישי לפי הצורך"],
+      ["✎", "מספר סבבי תיקונים מוגדר לפני הפרסום"],
+      ["＋", "אפשרות להזמין שינויים נוספים בעתיד"],
+      ["✓", "ללא התחייבות לתחזוקה חודשית"],
+    ],
+  },
   {
     icon: "✍️",
     title: "הקלדה, עריכה וליטוש מסמכים",
@@ -232,7 +290,11 @@ const faqs = [
   ],
   [
     "האם אפשר לקבל עזרה מהבית?",
-    "כן. חלק ניכר מהשירותים ניתן מרחוק, מכל מקום בארץ ובתיאום מראש.",
+    "כן. חלק ניכר מהשירותים ניתן מרחוק, מכל מקום בארץ ובתיאום מראש. לפי הצורך ניתן להתחבר למחשב רק באישורכם, כאשר אתם רואים את הפעולות ויכולים לעצור את החיבור בכל רגע.",
+  ],
+  [
+    "האם אפשר להזמין אתר תדמית כמו האתר הזה?",
+    "כן. ניתן להקים אתר תדמית מקצועי ומותאם לטלפון, הכולל הצגת העסק והשירותים וכפתורי יצירת קשר. לאחר הפרסום ניתן להזמין שינויים נוספים לפי הצורך ובתשלום נפרד, ללא התחייבות לתחזוקה חודשית.",
   ],
   [
     "האם השירות מתאים גם למי שאינו מסתדר עם מחשבים?",
@@ -272,26 +334,35 @@ function SectionHeading({
 
 function LogoFive({ compact = false }: { compact?: boolean }) {
   return (
-    <span className={`logo-five${compact ? " logo-five-compact" : ""}`}>
-      <span className="logo-five-grid" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-        <i />
+    <span className={`logo-combo${compact ? " logo-combo-compact" : ""}`}>
+      <svg className="logo-combo-mark" viewBox="0 0 96 76" aria-hidden="true">
+        <defs>
+          <linearGradient id={`logoGold${compact ? "Compact" : "Full"}`} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#f1dda9" />
+            <stop offset="1" stopColor="#b69052" />
+          </linearGradient>
+        </defs>
+        <rect className="logo-screen" x="18" y="8" width="69" height="49" rx="7" />
+        <path className="logo-screen-stand" d="M43 57h19m-14 0-4 9m14-9 4 9m-25 0h32" />
+        <path className="logo-scales" d="M53 20v24M38 25h30M42 25l-8 13m4-13 8 13m15-13-8 13m4-13 8 13M31 38h14c-1 5-4 7-7 7s-6-2-7-7Zm22 0h14c-1 5-4 7-7 7s-6-2-7-7Z" />
+        <circle className="logo-scale-pin" cx="53" cy="18" r="3" />
+        <path className="logo-document" d="M9 31h25l10 10v29H9Z" />
+        <path className="logo-document-fold" d="M34 31v10h10" />
+        <path className="logo-document-line" d="M16 48h18M16 55h15" />
+        <path className="logo-pencil" d="m20 66 16-16 5 5-16 16-7 2Z" />
+        <path className="logo-pencil-tip" d="m18 73 2-7 5 5Z" />
+        <path className="logo-send" d="m75 62 13-5-5 13-2-6Z" />
+      </svg>
+      <span className="logo-combo-copy">
+        <span className="logo-five-name">עומרי נתנאל</span>
+        <small>משפטנות ומחשוב</small>
       </span>
-      <span className="logo-five-name">עומרי נתנאל</span>
-      {!compact && (
-        <span className="logo-five-rule" aria-hidden="true">
-          <i />
-        </span>
-      )}
-      <small>משפטנות ומחשוב</small>
     </span>
   );
 }
 
 export default function Home() {
-  const [scenario, setScenario] = useState(0);
+  const [activeScenario, setActiveScenario] = useState(0);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -348,14 +419,14 @@ export default function Home() {
   };
 
   return (
-    <main dir="rtl">
+    <main dir="rtl" className="luxe-site">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="חזרה לראש הדף">
           <LogoFive compact />
         </a>
         <nav aria-label="ניווט ראשי">
           <a href="#services">שירותים</a>
-          <a href="#featured-services">שירותים חדשים</a>
+          <a href="#transformation">לפני ואחרי</a>
           <a href="#about">אודות</a>
           <a href="#faq">שאלות</a>
         </nav>
@@ -364,19 +435,23 @@ export default function Home() {
         </a>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero luxe-hero" id="top">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-orb orb-one" aria-hidden="true" />
+        <div className="hero-orb orb-two" aria-hidden="true" />
         <div className="hero-content">
-          <span className="hero-kicker">
-            <i /> משפטנות ומחשוב, בשפה פשוטה
-          </span>
+          <span className="hero-kicker"><i /> משפטנות, מחשוב ושירות אישי במקום אחד</span>
           <h1>
-            כשהמסמך, המערכת
-            <br />או המחשב מסתבכים,
-            <br /><span>עושים סדר.</span>
+            חוסכים זמן.
+            <br />
+            <span>מונעים טעויות</span>
+            <br />
+            ומסיימים את המשימה.
           </h1>
           <p className="hero-copy">
-            סיוע מקצועי וסבלני במסמכים, במערכות משפטיות וממשלתיות,
-            ב־Word וב־PDF, בהדרכה ובהתחברות מרחוק. פשוט שולחים צילום ומתחילים לעשות סדר.
+            מסמך שלא ברור מה לעשות איתו, מערכת שלא מסתדרים איתה או קבצים
+            שצריך להפוך לעבודה מסודרת? מקבלים כתובת אחת שמחברת הבנה משפטית,
+            מיומנות מחשוב ושירות בגובה העיניים.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsappHref} target="_blank">
@@ -384,6 +459,9 @@ export default function Home() {
             </a>
             <a className="button button-secondary" href={`tel:${phoneHref}`}>
               <span>📞</span> שיחת טלפון
+            </a>
+            <a className="button button-secondary" href={smsHref}>
+              <span>✉️</span> שליחת SMS
             </a>
             <a className="text-link" href="#services">
               לכל השירותים <span>←</span>
@@ -394,44 +472,48 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="hero-visual luxury-story" aria-label="שיחת WhatsApp לדוגמה">
-          <div className="credential credential-law">LL.B במשפטים</div>
-          <div className="credential credential-tech">טכנאי מחשבים</div>
-          <div className="credential credential-network">מנהל רשתות</div>
+        <div className="hero-visual luxe-story" aria-label="דוגמה לשיחת שירות בוואטסאפ">
+          <div className="credentials-halo" aria-hidden="true" />
+          <div className="credentials-wall" aria-label="הכשרות מקצועיות">
+            <article className="credential-card credential-law">
+              <span>אקדמית אונו</span>
+              <b>תואר LL.B במשפטים</b>
+              <strong>LL.B</strong>
+              <small>בוגר משפטים</small>
+            </article>
+            <article className="credential-card credential-pc">
+              <span>המכללה למינהל</span>
+              <b>תעודת טכנאי מחשבים</b>
+              <strong>PC</strong>
+              <small>הכשרה בהיקף 80 שעות</small>
+            </article>
+            <article className="credential-card credential-network">
+              <span>המכללה למינהל</span>
+              <b>תעודת מנהל רשתות</b>
+              <strong>IT</strong>
+              <small>הכשרה בהיקף 200 שעות</small>
+            </article>
+          </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="luxury-person"
-            src="/omri-legal-tech/character-v2.webp"
-            alt="דמות מאוירת של עומרי נתנאל בחולצה לבנה וכיפה שחורה"
-            width={1536}
-            height={1024}
-          />
-          <div className="whatsapp-phone">
-            <div className="whatsapp-head">
-              <span className="whatsapp-avatar">ע</span>
-              <span><b>עומרי נתנאל</b><small>מחובר</small></span>
-              <i>⋮</i>
+          <img className="luxe-person" src="/omri-legal-tech/character-option-3.png" alt="דמות מאוירת של עומרי נתנאל מעיין במסמך" width={1200} height={1200} />
+          <div className="whatsapp-demo">
+            <div className="wa-topbar">
+              <span className="wa-avatar">ע</span>
+              <p><b>עומרי נתנאל</b><small>מחובר כעת</small></p>
+              <i>WhatsApp</i>
             </div>
-            <div className="whatsapp-chat" key={scenario}>
-              {chatScenarios[scenario].messages.map(([who, message], index) => (
-                <p className={who} key={`${who}-${index}`}>
-                  {message}<time>{index < 2 ? "10:14" : "10:15"}</time>
+            <div className="wa-chat" key={whatsappScenarios[activeScenario].id}>
+              {whatsappScenarios[activeScenario].messages.map(([side, message], index) => (
+                <p className={side === "omri" ? "wa-message wa-omri" : "wa-message wa-client"} key={`${side}-${index}`}>
+                  {message}<small>{side === "omri" ? "✓✓" : ""}</small>
                 </p>
               ))}
             </div>
-            <div className="whatsapp-input"><span>הקלדת הודעה</span><b>➤</b></div>
           </div>
-          <div className="scenario-tabs" role="tablist" aria-label="בחירת שיחה לדוגמה">
-            {chatScenarios.map((item, index) => (
-              <button
-                aria-selected={scenario === index}
-                className={scenario === index ? "active" : ""}
-                key={item.label}
-                onClick={() => setScenario(index)}
-                role="tab"
-                type="button"
-              >
-                {item.label}
+          <div className="scenario-tabs" role="tablist" aria-label="בחירת תרחיש שיחה">
+            {whatsappScenarios.map((scenario, index) => (
+              <button className={activeScenario === index ? "active" : ""} onClick={() => setActiveScenario(index)} role="tab" aria-selected={activeScenario === index} key={scenario.id}>
+                <span>{scenario.icon}</span>{scenario.tab}
               </button>
             ))}
           </div>
@@ -456,54 +538,16 @@ export default function Home() {
         <div>
           <span>🗂️</span>
           <p>
-            <strong>למעלה מעשור</strong>
-            <small>בסביבת משרדי עורכי דין</small>
+            <strong>ניסיון של עשור</strong>
+            <small>בעבודה במשרד עורך דין</small>
           </p>
         </div>
         <div>
-          <span>🤝</span>
+          <span>◉</span>
           <p>
-            <strong>שירות אישי</strong>
-            <small>ברור וסבלני</small>
+            <strong>סיוע מרחוק</strong>
+            <small>באישור ובשליטת הלקוח</small>
           </p>
-        </div>
-      </section>
-
-      <section className="section featured-services" id="featured-services">
-        <SectionHeading eyebrow="שירותים חדשים" title="גם כשצריך להיכנס פנימה ולעשות את זה יחד">
-          פתרונות מעשיים לאנשים ולעסקים שרוצים תוצאה מקצועית בלי להסתבך עם הצד הטכני.
-        </SectionHeading>
-        <div className="featured-grid">
-          <article className="featured-card remote-card">
-            <span className="featured-number">01</span>
-            <div className="featured-icon">↗</div>
-            <h3>סיוע מרחוק במחשב</h3>
-            <p>
-              התחברות מרחוק לצורך פתרון תקלות, עבודה במערכות מקוונות, סידור מסמכים
-              והדרכה בזמן אמת.
-            </p>
-            <ul>
-              <li>החיבור מתבצע רק באישורכם ובנוכחותכם</li>
-              <li>אתם רואים את כל הפעולות על המסך</li>
-              <li>ניתן להפסיק את החיבור בכל רגע</li>
-            </ul>
-            <a href={whatsappHref} target="_blank">לתיאום סיוע מרחוק ←</a>
-          </article>
-          <article className="featured-card website-card">
-            <span className="featured-number">02</span>
-            <div className="featured-icon">⌘</div>
-            <h3>בניית אתר תדמית לעסק</h3>
-            <p>
-              אתר מקצועי כמו האתר הזה, מותאם לטלפון ומציג בצורה ברורה את העסק,
-              השירותים ודרכי יצירת הקשר.
-            </p>
-            <ul>
-              <li>עיצוב אישי וחיבור לכפתור WhatsApp</li>
-              <li>העלאה לאינטרנט וכתובת קבועה</li>
-              <li>שינויים עתידיים לפי הצורך ובתשלום נפרד</li>
-            </ul>
-            <a href={whatsappHref} target="_blank">רוצה אתר לעסק שלך? ←</a>
-          </article>
         </div>
       </section>
 
@@ -647,7 +691,7 @@ export default function Home() {
           <article>
             <span>🌐</span>
             <h3>שירות מרחוק</h3>
-            <p>סיוע נוח מכל מקום בארץ, בתיאום מראש.</p>
+            <p>מתחברים רק באישורכם. אתם רואים הכול ויכולים לעצור בכל רגע.</p>
           </article>
         </div>
       </section>
@@ -709,8 +753,8 @@ export default function Home() {
             </p>
             <p>
               השירות משלב הבנה של סביבת העבודה המשפטית, מיומנות טכנולוגית,
-              היכרות מעמיקה עם מסמכים ומערכות מקוונות, עבודה קפדנית ושירות
-              אישי וסבלני.
+              היכרות מעמיקה עם מסמכים ומערכות מקוונות, סיוע מרחוק ובניית אתרי
+              תדמית לעסקים קטנים, בעבודה קפדנית ובשירות אישי וסבלני.
             </p>
           </div>
         </div>
@@ -765,6 +809,9 @@ export default function Home() {
             </a>
             <a className="button contact-call" href={`tel:${phoneHref}`}>
               <span>📞</span> {phoneDisplay}
+            </a>
+            <a className="button contact-call" href={smsHref}>
+              <span>✉️</span> שליחת SMS
             </a>
           </div>
         </div>

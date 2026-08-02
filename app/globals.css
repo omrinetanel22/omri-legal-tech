@@ -13,7 +13,6 @@
   --background: #f6faf9;
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -2403,455 +2402,857 @@ html.motion-ready .lawyer-section.is-visible {
   }
 }
 
-/* 2026 luxury direction */
-:root {
-  --navy: #0d0d0e;
-  --navy-deep: #070708;
-  --teal: #b89a61;
-  --teal-light: #efe6d4;
-  --gold: #c9aa6f;
-  --ink: #191816;
-  --muted: #756f64;
-  --line: #ded8cd;
-  --paper: #fbf8f1;
-  --background: #f5f1e8;
+/* Boutique black, ivory and champagne visual system */
+.luxe-site {
+  --coal: #090a0b;
+  --coal-soft: #111315;
+  --coal-card: #17191b;
+  --ivory: #f6f0e5;
+  --champagne: #d7bb82;
+  --champagne-bright: #ecd59d;
+  --champagne-muted: #927b52;
+  --luxe-line: rgb(215 187 130 / 22%);
+  background: var(--coal);
+  color: var(--ivory);
+  overflow: clip;
 }
 
-body {
-  background: #f5f1e8;
+.luxe-site .site-header {
+  background: rgb(9 10 11 / 88%);
+  border-bottom-color: var(--luxe-line);
+  box-shadow: 0 12px 45px rgb(0 0 0 / 24%);
 }
 
-.site-header {
-  background: rgb(7 7 8 / 93%);
-  border-bottom: 1px solid rgb(201 170 111 / 22%);
-  box-shadow: 0 10px 34px rgb(0 0 0 / 18%);
+.luxe-site .logo-five,
+.luxe-site .logo-five-name,
+.luxe-site .site-header nav a {
+  color: var(--ivory);
 }
 
-.site-header .logo-five,
-.site-header .logo-five-name,
-.site-header .logo-five small,
-.site-header nav a {
-  color: #f5efe3;
+.luxe-site .logo-five small,
+.luxe-site .scope-note,
+.luxe-site .hero-copy {
+  color: #b8b3aa;
 }
 
-.site-header .logo-five-grid {
+.luxe-site .logo-five-grid {
   background-image:
-    linear-gradient(rgb(201 170 111 / 35%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(201 170 111 / 35%) 1px, transparent 1px);
+    linear-gradient(rgb(215 187 130 / 28%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(215 187 130 / 28%) 1px, transparent 1px);
 }
 
-.site-header .logo-five-grid i,
-.site-header nav a::after,
-.site-header .logo-five-rule {
-  background: var(--gold);
+.luxe-site .logo-five-grid i,
+.luxe-site .logo-five-grid i:nth-child(2),
+.luxe-site .logo-five-grid i:nth-child(4) {
+  background: var(--champagne);
 }
 
-.header-contact {
-  background: transparent;
-  border: 1px solid var(--gold);
-  border-radius: 3px;
-  color: #f7f0e3;
-  letter-spacing: .02em;
+.luxe-site .logo-five-rule {
+  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
 }
 
-.hero {
-  background:
-    radial-gradient(circle at 80% 38%, rgb(201 170 111 / 14%), transparent 25%),
-    radial-gradient(circle at 15% 15%, rgb(255 255 255 / 5%), transparent 20%),
-    linear-gradient(132deg, #050506 0%, #111112 58%, #070708 100%);
-  color: #f7f1e7;
-  grid-template-columns: minmax(0, .92fr) minmax(520px, 1.08fr);
-  min-height: 760px;
-  padding-bottom: 92px;
-  padding-top: 100px;
+.luxe-site .logo-five-rule i {
+  background: var(--coal);
+  border-color: var(--champagne);
 }
 
-.hero::before {
-  background-image:
-    linear-gradient(rgb(201 170 111 / 5%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(201 170 111 / 5%) 1px, transparent 1px);
-  background-size: 46px 46px;
-  content: "";
-  inset: 0;
-  mask-image: linear-gradient(to left, black, transparent 76%);
-  position: absolute;
+.luxe-site .site-header nav a::after {
+  background: var(--champagne);
 }
 
-.hero-content {
-  align-self: center;
-  z-index: 5;
+.luxe-site .header-contact,
+.luxe-site .button-primary {
+  background: linear-gradient(135deg, #ead293, #b49358);
+  box-shadow: 0 12px 34px rgb(196 158 91 / 18%);
+  color: #14110b;
 }
 
-.hero-kicker {
+.luxe-site .header-contact:hover,
+.luxe-site .button-primary:hover {
+  box-shadow: 0 16px 42px rgb(224 190 124 / 28%);
+}
+
+.luxe-site .button-secondary {
   background: rgb(255 255 255 / 4%);
-  border-color: rgb(201 170 111 / 34%);
-  border-radius: 3px;
-  color: #d8bd8a;
+  border-color: var(--luxe-line);
+  color: var(--ivory);
 }
 
-.hero-kicker i {
-  background: var(--gold);
-  box-shadow: 0 0 0 5px rgb(201 170 111 / 10%);
+.luxe-site .text-link {
+  color: var(--champagne-bright);
 }
 
-.hero h1 {
-  color: #fffaf0;
-  font-size: clamp(48px, 5.15vw, 76px);
-  font-weight: 500;
-  letter-spacing: -.045em;
-  line-height: 1.04;
+.luxe-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgb(215 187 130 / 12%), transparent 27%),
+    radial-gradient(circle at 16% 82%, rgb(255 255 255 / 4%), transparent 30%),
+    linear-gradient(135deg, #08090a 0%, #101214 52%, #08090a 100%);
+  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+  min-height: 780px;
+  padding-bottom: 92px;
+  padding-top: 105px;
 }
 
-.hero h1 span {
-  color: #d5b777;
+.luxe-hero .hero-grid {
+  background-image:
+    linear-gradient(rgb(215 187 130 / 3.5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(215 187 130 / 3.5%) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(90deg, transparent, black 25%, black 75%, transparent);
 }
 
-.hero-copy {
-  color: #c8c1b5;
-  line-height: 1.75;
-  max-width: 610px;
+.luxe-hero .hero-orb {
+  border-color: rgb(215 187 130 / 13%);
 }
 
-.hero .button-primary {
-  background: linear-gradient(135deg, #d4b778, #9e7d43);
-  border-radius: 3px;
-  box-shadow: 0 14px 34px rgb(173 136 67 / 24%);
-  color: #0a0a0a;
+.luxe-hero .hero-kicker,
+.luxe-site .eyebrow {
+  color: var(--champagne);
 }
 
-.hero .button-secondary {
-  background: transparent;
-  border-color: rgb(255 255 255 / 24%);
-  border-radius: 3px;
-  color: #f7efe2;
+.luxe-hero .hero-kicker {
+  background: rgb(215 187 130 / 7%);
+  border-color: rgb(215 187 130 / 18%);
 }
 
-.hero .text-link,
-.hero .scope-note {
-  color: #b8b0a4;
+.luxe-hero .hero-kicker i {
+  background: var(--champagne);
+  box-shadow: 0 0 0 5px rgb(215 187 130 / 10%);
 }
 
-.hero .scope-note span {
-  background: rgb(201 170 111 / 14%);
-  color: #d7b973;
+.luxe-hero h1 {
+  color: var(--ivory);
+  font-size: clamp(48px, 5.4vw, 78px);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
 }
 
-.luxury-story {
-  align-self: center;
-  min-height: 570px;
+.luxe-hero h1 span {
+  background: linear-gradient(100deg, #f5e7c2, #bd9654);
+  background-clip: text;
+  color: transparent;
+}
+
+.luxe-site .scope-note span {
+  background: rgb(215 187 130 / 10%);
+  color: var(--champagne);
+}
+
+.luxe-story {
+  min-height: 600px;
   position: relative;
 }
 
-.luxury-story::before {
-  border: 1px solid rgb(201 170 111 / 25%);
+.credentials-halo {
+  background: radial-gradient(circle, rgb(215 187 130 / 17%), transparent 64%);
+  border: 1px solid rgb(215 187 130 / 10%);
   border-radius: 50%;
-  content: "";
-  height: 490px;
+  height: 570px;
   position: absolute;
-  right: 2%;
-  top: 38px;
-  width: 490px;
+  right: 3%;
+  top: -25px;
+  width: 570px;
 }
 
-.luxury-person {
-  bottom: 22px;
-  filter: drop-shadow(0 30px 40px rgb(0 0 0 / 38%));
-  height: 480px;
-  object-fit: contain;
-  object-position: center bottom;
+.credentials-halo::after {
+  border: 1px solid rgb(215 187 130 / 7%);
+  border-radius: inherit;
+  content: "";
+  inset: 38px;
   position: absolute;
-  right: -72px;
-  width: 610px;
+}
+
+.luxe-person {
+  animation: luxe-person-in 800ms 140ms both cubic-bezier(0.2, 0.8, 0.2, 1);
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  position: absolute;
+  right: -2%;
+  top: -25px;
+  width: 92%;
   z-index: 2;
 }
 
-.credential {
-  backdrop-filter: blur(12px);
-  background: rgb(14 14 15 / 82%);
-  border: 1px solid rgb(201 170 111 / 38%);
-  box-shadow: 0 15px 38px rgb(0 0 0 / 28%);
-  color: #e4c98e;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 10px 14px;
+.whatsapp-demo {
+  animation: phone-slide 720ms 450ms both cubic-bezier(0.2, 0.9, 0.2, 1);
+  background: #efeae2;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 25px;
+  bottom: 48px;
+  box-shadow: 0 30px 80px rgb(0 0 0 / 58%);
+  left: -3%;
+  overflow: hidden;
   position: absolute;
+  transform: rotate(-1.5deg);
+  width: min(390px, 66%);
   z-index: 5;
 }
 
-.credential-law { right: 4%; top: 45px; }
-.credential-tech { right: 1%; top: 96px; }
-.credential-network { right: 7%; top: 147px; }
-
-.whatsapp-phone {
-  background: #111214;
-  border: 4px solid #27282b;
-  border-radius: 31px;
-  bottom: 38px;
-  box-shadow: 0 34px 75px rgb(0 0 0 / 52%);
-  height: 500px;
-  left: -16px;
-  overflow: hidden;
-  position: absolute;
-  transform: rotate(-2.5deg);
-  width: 286px;
-  z-index: 6;
-}
-
-.whatsapp-head {
+.wa-topbar {
   align-items: center;
-  background: #202c33;
-  color: #f2f4f5;
+  background: #142e2b;
+  color: white;
   display: flex;
-  gap: 9px;
-  height: 64px;
-  padding: 11px 13px;
+  gap: 10px;
+  min-height: 66px;
+  padding: 10px 14px;
 }
 
-.whatsapp-head > span:nth-child(2) {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.whatsapp-head b { font-size: 13px; }
-.whatsapp-head small { color: #b3bec4; font-size: 9px; margin-top: 2px; }
-.whatsapp-head i { color: #aeb9be; font-size: 22px; font-style: normal; }
-
-.whatsapp-avatar {
+.wa-avatar {
   align-items: center;
-  background: #c7a866;
+  background: linear-gradient(135deg, #ead293, #9e7b45);
   border-radius: 50%;
-  color: #101010;
+  color: #18130c;
   display: flex;
-  font-weight: 800;
-  height: 37px;
+  font-weight: 900;
+  height: 40px;
   justify-content: center;
-  width: 37px;
+  width: 40px;
 }
 
-.whatsapp-chat {
-  animation: chat-fade 280ms ease both;
+.wa-topbar p {
+  flex: 1;
+  margin: 0;
+}
+
+.wa-topbar b,
+.wa-topbar small {
+  display: block;
+}
+
+.wa-topbar b {
+  font-size: 13px;
+}
+
+.wa-topbar small {
+  color: #b8d0c9;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+.wa-topbar i {
+  color: #8fd9b9;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.wa-chat {
   background:
-    linear-gradient(rgb(12 19 23 / 90%), rgb(12 19 23 / 90%)),
-    radial-gradient(circle, #36444b 1px, transparent 1px);
-  background-size: auto, 17px 17px;
+    linear-gradient(rgb(239 234 226 / 88%), rgb(239 234 226 / 88%)),
+    radial-gradient(circle, #9e9e9e 1px, transparent 1px);
+  background-size: auto, 16px 16px;
   display: flex;
   flex-direction: column;
   gap: 7px;
-  height: 387px;
-  overflow: hidden;
-  padding: 17px 10px;
+  min-height: 250px;
+  padding: 18px 14px;
 }
 
-.whatsapp-chat p {
-  border-radius: 8px;
-  color: #e9edef;
+.wa-message {
+  animation: message-in 360ms both ease-out;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  color: #1d2723;
   font-family: Arial, sans-serif;
   font-size: 11px;
-  line-height: 1.4;
+  line-height: 1.45;
   margin: 0;
-  max-width: 86%;
-  padding: 8px 8px 5px;
+  max-width: 82%;
+  padding: 8px 9px 6px;
 }
 
-.whatsapp-chat p.client { align-self: flex-start; background: #202c33; }
-.whatsapp-chat p.omri { align-self: flex-end; background: #005c4b; }
-.whatsapp-chat time { color: #9fb0b7; display: block; font-size: 8px; margin-top: 3px; text-align: left; }
+.wa-message:nth-child(2) { animation-delay: 80ms; }
+.wa-message:nth-child(3) { animation-delay: 160ms; }
+.wa-message:nth-child(4) { animation-delay: 240ms; }
 
-.whatsapp-input {
-  align-items: center;
-  background: #111b21;
-  display: flex;
-  gap: 8px;
-  height: 49px;
-  padding: 7px 8px;
+.wa-message small {
+  color: #2c8fb5;
+  float: left;
+  font-size: 8px;
+  margin: 4px 7px 0 0;
 }
 
-.whatsapp-input span {
-  background: #202c33;
-  border-radius: 20px;
-  color: #8d9ba2;
-  flex: 1;
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  padding: 10px 13px;
+.wa-client {
+  align-self: flex-start;
+  background: white;
 }
 
-.whatsapp-input b {
-  align-items: center;
-  background: #00a884;
-  border-radius: 50%;
-  color: white;
-  display: flex;
-  height: 34px;
-  justify-content: center;
-  transform: rotate(180deg);
-  width: 34px;
+.wa-omri {
+  align-self: flex-end;
+  background: #d8fdd2;
 }
 
 .scenario-tabs {
-  bottom: -18px;
+  bottom: -15px;
   display: flex;
-  gap: 7px;
+  gap: 8px;
   left: 0;
   position: absolute;
-  z-index: 8;
+  right: 0;
+  z-index: 7;
 }
 
 .scenario-tabs button {
-  background: #151516;
-  border: 1px solid rgb(201 170 111 / 26%);
+  align-items: center;
+  background: rgb(19 21 23 / 94%);
+  border: 1px solid var(--luxe-line);
   border-radius: 999px;
-  color: #a9a197;
+  color: #aaa59d;
   cursor: pointer;
+  display: inline-flex;
+  flex: 1;
   font-family: inherit;
   font-size: 11px;
-  padding: 8px 12px;
-}
-
-.scenario-tabs button.active {
-  background: #c9aa6f;
-  border-color: #c9aa6f;
-  color: #080808;
   font-weight: 800;
+  gap: 5px;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 10px;
+  transition: 180ms ease;
 }
 
-@keyframes chat-fade {
-  from { opacity: .25; transform: translateY(5px); }
+.scenario-tabs button:hover,
+.scenario-tabs button:focus-visible,
+.scenario-tabs button.active {
+  background: linear-gradient(135deg, #ead293, #b49358);
+  color: #16110a;
+  transform: translateY(-2px);
+}
+
+.scenario-tabs button span {
+  font-size: 13px;
+}
+
+@keyframes luxe-person-in {
+  from { opacity: 0; transform: translateY(22px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes message-in {
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.trust-bar {
-  background: #0b0b0c;
-  border-color: rgb(201 170 111 / 20%);
-  color: #f0e9dd;
+.luxe-site .trust-bar,
+.luxe-site .section,
+.luxe-site .lawyer-section,
+.luxe-site .contact-section,
+.luxe-site .site-footer {
+  background: var(--coal);
+  border-color: var(--luxe-line);
 }
 
-.trust-bar > div { border-color: rgb(201 170 111 / 18%); }
-.trust-bar small { color: #9c958b; }
-.trust-bar > div > span { color: #d5b777; }
+.luxe-site .trust-bar {
+  background: linear-gradient(90deg, #101214, #161719, #101214);
+}
 
-.featured-services {
+.luxe-site .trust-bar > div {
+  border-color: var(--luxe-line);
+}
+
+.luxe-site .trust-bar strong,
+.luxe-site h2,
+.luxe-site h3,
+.luxe-site .service-summary-copy b,
+.luxe-site .system-card h3,
+.luxe-site .faq-item summary,
+.luxe-site .contact-details b {
+  color: var(--ivory);
+}
+
+.luxe-site .trust-bar small,
+.luxe-site .section-heading p,
+.luxe-site .system-card p,
+.luxe-site .systems-disclaimer,
+.luxe-site .who-copy > p,
+.luxe-site .who-points p,
+.luxe-site .service-summary-copy small,
+.luxe-site .service-item p,
+.luxe-site .about-copy p,
+.luxe-site .lawyer-section p,
+.luxe-site .faq-item p,
+.luxe-site .contact-copy p,
+.luxe-site .contact-details small,
+.luxe-site .legal-note p,
+.luxe-site .footer-bottom {
+  color: #aaa69f;
+}
+
+.luxe-site .systems-section,
+.luxe-site .services-section,
+.luxe-site .faq-section {
+  background: #0d0f10;
+}
+
+.luxe-site .system-card,
+.luxe-site .who-points article,
+.luxe-site .service-accordion,
+.luxe-site .faq-item,
+.luxe-site .contact-details,
+.luxe-site .legal-note {
+  background: linear-gradient(145deg, #17191b, #111315);
+  border-color: var(--luxe-line);
+  box-shadow: 0 18px 50px rgb(0 0 0 / 20%);
+}
+
+.luxe-site .system-card > span,
+.luxe-site .service-icon,
+.luxe-site .lawyer-icon {
+  background: rgb(215 187 130 / 9%);
+  border: 1px solid rgb(215 187 130 / 16%);
+  color: var(--champagne);
+}
+
+.luxe-site .service-accordion summary,
+.luxe-site .service-body,
+.luxe-site .faq-item summary,
+.luxe-site .faq-item p {
+  border-color: var(--luxe-line);
+}
+
+.luxe-site .service-item {
+  background: rgb(255 255 255 / 2.5%);
+  border-color: rgb(255 255 255 / 6%);
+}
+
+.luxe-site .service-item span,
+.luxe-site .accordion-plus,
+.luxe-site .faq-item summary i {
+  color: var(--champagne);
+}
+
+.luxe-site .transformation {
   background:
-    radial-gradient(circle at 10% 100%, rgb(201 170 111 / 12%), transparent 24%),
-    #f5f1e8;
+    radial-gradient(circle at 50% 45%, rgb(215 187 130 / 7%), transparent 30%),
+    #090a0b;
 }
 
-.featured-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 42px auto 0;
-  max-width: 1120px;
+.luxe-site .example-card {
+  border-color: var(--luxe-line);
+  box-shadow: 0 24px 70px rgb(0 0 0 / 34%);
 }
 
-.featured-card {
-  background: #0d0d0e;
-  border: 1px solid #2c2924;
-  box-shadow: 0 24px 58px rgb(48 41 28 / 16%);
-  color: #f6f0e6;
-  min-height: 430px;
-  overflow: hidden;
-  padding: 42px;
-  position: relative;
+.luxe-site .who-section,
+.luxe-site .about-section {
+  background: #090a0b;
 }
 
-.featured-card::before {
-  border: 1px solid rgb(201 170 111 / 17%);
-  border-radius: 50%;
-  content: "";
-  height: 270px;
-  left: -110px;
-  position: absolute;
-  top: -120px;
-  width: 270px;
+.luxe-site .about-panel,
+.luxe-site .lawyer-section,
+.luxe-site .contact-section {
+  background:
+    radial-gradient(circle at 85% 20%, rgb(215 187 130 / 8%), transparent 28%),
+    linear-gradient(135deg, #121416, #0b0c0d);
+  border-color: var(--luxe-line);
 }
 
-.featured-number {
-  color: rgb(201 170 111 / 34%);
-  font-size: 54px;
-  left: 28px;
-  line-height: 1;
-  position: absolute;
-  top: 26px;
+.luxe-site .about-symbol .logo-five {
+  background: linear-gradient(145deg, #191b1e, #0d0f10);
+  border-color: var(--luxe-line);
 }
 
-.featured-icon {
-  align-items: center;
-  border: 1px solid #c9aa6f;
-  color: #d8bb7e;
-  display: flex;
-  font-family: Arial, sans-serif;
-  font-size: 23px;
-  height: 48px;
-  justify-content: center;
-  margin-bottom: 28px;
-  width: 48px;
+.luxe-site .footer-links a,
+.luxe-site .footer-top button {
+  color: #c7c1b6;
 }
 
-.featured-card h3 { color: #fff8ed; font-size: 30px; margin: 0 0 14px; }
-.featured-card p { color: #bbb3a7; font-size: 16px; line-height: 1.7; margin: 0; max-width: 510px; }
-.featured-card ul { color: #d7d0c4; line-height: 1.9; list-style: none; margin: 24px 0 30px; padding: 0; }
-.featured-card li::before { color: #c9aa6f; content: "✓"; margin-left: 9px; }
-.featured-card a { border-bottom: 1px solid #c9aa6f; color: #d9bc81; font-weight: 800; padding-bottom: 5px; }
-
-.section-heading .eyebrow { color: #9d7c43; }
-.section-heading h2 { color: #171511; }
-
-@media (max-width: 1120px) {
-  .hero {
-    gap: 18px;
-    grid-template-columns: minmax(0, 1fr) minmax(460px, .96fr);
-    padding-inline: 42px;
-  }
-  .luxury-person { right: -105px; width: 560px; }
-  .whatsapp-phone { left: -32px; transform: rotate(-1deg) scale(.92); }
-  .scenario-tabs { flex-wrap: wrap; left: -15px; max-width: 300px; }
+.luxe-site .floating-whatsapp {
+  background: #1f9e61;
+  box-shadow: 0 15px 38px rgb(0 0 0 / 38%);
 }
 
-@media (max-width: 820px) {
-  .site-header { grid-template-columns: 1fr auto; }
-  .site-header nav { display: none; }
-  .hero {
+@media (max-width: 1100px) {
+  .luxe-hero {
     grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 72px 22px 64px;
   }
-  .hero-content { text-align: center; }
-  .hero-kicker { justify-content: center; }
-  .hero h1 { font-size: clamp(41px, 12.5vw, 60px); }
-  .hero-copy { margin-inline: auto; }
-  .hero-actions, .scope-note { justify-content: center; }
-  .luxury-story { min-height: 590px; margin-top: 18px; }
-  .luxury-story::before { height: 430px; right: 50%; transform: translateX(50%); width: 430px; }
-  .luxury-person { bottom: 15px; right: 50%; transform: translateX(50%); width: 570px; }
-  .whatsapp-phone { bottom: 45px; left: 4%; transform: rotate(-2deg) scale(.9); transform-origin: bottom left; }
-  .credential { right: auto; }
-  .credential-law { right: 3%; top: 78px; }
-  .credential-tech { right: 0; top: 128px; }
-  .credential-network { right: 5%; top: 178px; }
-  .scenario-tabs { bottom: -8px; left: 50%; justify-content: center; max-width: 100%; transform: translateX(-50%); width: 100%; }
-  .featured-grid { grid-template-columns: 1fr; }
+
+  .luxe-story {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+  }
 }
 
-@media (max-width: 560px) {
-  .site-header { min-height: 68px; padding-inline: 14px; }
-  .site-header .logo-five-compact { min-width: 145px; }
-  .site-header .logo-five-name { font-size: 20px; }
-  .header-contact { font-size: 11px; padding: 10px 11px; }
-  .hero h1 { font-size: 42px; }
-  .hero-actions .button { width: 100%; }
-  .hero .text-link { width: 100%; }
-  .luxury-story { min-height: 610px; }
-  .luxury-person { bottom: 38px; right: 42%; width: 510px; }
-  .whatsapp-phone { bottom: 68px; left: -25px; transform: rotate(-2deg) scale(.72); }
-  .credential { font-size: 10px; padding: 8px 9px; }
-  .credential-law { right: 1%; top: 105px; }
-  .credential-tech { right: -2%; top: 148px; }
-  .credential-network { right: 3%; top: 191px; }
-  .scenario-tabs { bottom: 0; flex-wrap: wrap; }
-  .scenario-tabs button { font-size: 10px; padding: 7px 9px; }
-  .featured-card { min-height: auto; padding: 34px 25px; }
-  .featured-card h3 { font-size: 26px; }
+@media (max-width: 680px) {
+  .luxe-site .site-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .luxe-hero {
+    padding-top: 54px;
+  }
+
+  .luxe-hero h1 {
+    font-size: 43px;
+  }
+
+  .luxe-story {
+    min-height: 650px;
+  }
+
+  .credentials-halo {
+    height: 390px;
+    right: -13%;
+    top: 0;
+    width: 390px;
+  }
+
+  .luxe-person {
+    max-height: 385px;
+    right: -10%;
+    top: 8px;
+    width: 116%;
+  }
+
+  .whatsapp-demo {
+    bottom: 85px;
+    left: 1%;
+    transform: rotate(-1deg);
+    width: 86%;
+  }
+
+  .wa-chat {
+    min-height: 245px;
+  }
+
+  .scenario-tabs {
+    bottom: 5px;
+    flex-wrap: wrap;
+  }
+
+  .scenario-tabs button {
+    flex: 1 1 calc(50% - 5px);
+  }
+
+  .scenario-tabs button:last-child {
+    flex-basis: 100%;
+  }
 }
 
+/* Selected brand direction: monitor + scales, document + editing */
+.logo-combo {
+  align-items: center;
+  color: var(--ivory, #f6f0e5);
+  display: inline-flex;
+  gap: 12px;
+  min-width: 238px;
+}
+
+.logo-combo-mark {
+  display: block;
+  filter: drop-shadow(0 8px 18px rgb(0 0 0 / 25%));
+  flex: 0 0 auto;
+  height: 61px;
+  overflow: visible;
+  width: 77px;
+}
+
+.logo-screen,
+.logo-screen-stand,
+.logo-scales,
+.logo-scale-pin,
+.logo-document,
+.logo-document-fold,
+.logo-document-line,
+.logo-pencil,
+.logo-pencil-tip,
+.logo-send {
+  fill: none;
+  stroke: url(#logoGoldFull);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo-screen,
+.logo-screen-stand {
+  stroke-width: 3;
+}
+
+.logo-scales {
+  stroke: #f3ead4;
+  stroke-width: 2.6;
+}
+
+.logo-scale-pin {
+  fill: #d7bb82;
+  stroke: #d7bb82;
+}
+
+.logo-document {
+  fill: #111315;
+  stroke-width: 2.6;
+}
+
+.logo-document-fold,
+.logo-document-line,
+.logo-pencil,
+.logo-pencil-tip {
+  stroke: #f3ead4;
+  stroke-width: 2.3;
+}
+
+.logo-pencil {
+  fill: #111315;
+}
+
+.logo-pencil-tip {
+  fill: #d7bb82;
+  stroke: #d7bb82;
+}
+
+.logo-send {
+  fill: rgb(215 187 130 / 12%);
+  stroke-width: 2.4;
+}
+
+.logo-combo-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-combo .logo-five-name {
+  color: var(--ivory, #f6f0e5);
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.logo-combo small {
+  color: #c4bfb6;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  margin-top: 7px;
+  text-align: center;
+}
+
+.logo-combo-compact {
+  gap: 8px;
+  min-width: 188px;
+}
+
+.logo-combo-compact .logo-combo-mark {
+  height: 47px;
+  width: 59px;
+}
+
+.logo-combo-compact .logo-screen,
+.logo-combo-compact .logo-screen-stand,
+.logo-combo-compact .logo-document {
+  stroke: url(#logoGoldCompact);
+}
+
+.logo-combo-compact .logo-five-name {
+  font-size: 22px;
+}
+
+.logo-combo-compact small {
+  font-size: 9px;
+  margin-top: 5px;
+}
+
+.credentials-wall {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.credential-card {
+  background:
+    linear-gradient(#f7efd9, #f7efd9) padding-box,
+    linear-gradient(135deg, #f1dda9, #8b6938) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 18px 45px rgb(0 0 0 / 38%);
+  color: #2b241a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 132px;
+  padding: 17px 19px;
+  position: absolute;
+  text-align: center;
+  width: 232px;
+}
+
+.credential-card::before,
+.credential-card::after {
+  border: 1px solid rgb(116 83 43 / 38%);
+  content: "";
+  inset: 7px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.credential-card::after {
+  border-color: rgb(116 83 43 / 18%);
+  inset: 11px;
+}
+
+.credential-card span,
+.credential-card small {
+  color: #715d3f;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.credential-card b {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.credential-card strong {
+  color: #9c733b;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  margin: 3px 0;
+}
+
+.credential-law {
+  right: -9%;
+  top: -8px;
+  transform: rotate(1.5deg);
+}
+
+.credential-pc {
+  left: -9%;
+  top: 20px;
+  transform: rotate(-2deg) scale(0.94);
+}
+
+.credential-network {
+  left: auto;
+  right: -9%;
+  top: 174px;
+  transform: rotate(-1.5deg) scale(0.92);
+}
+
+.luxe-person {
+  filter: drop-shadow(0 28px 38px rgb(0 0 0 / 28%));
+  max-height: 535px;
+  right: 3%;
+  top: 10px;
+  width: 82%;
+}
+
+.whatsapp-demo {
+  animation: wa-sharp-in 620ms 420ms both cubic-bezier(0.2, 0.9, 0.2, 1);
+  border-color: rgb(255 255 255 / 34%);
+  border-radius: 22px;
+  box-shadow: 0 32px 85px rgb(0 0 0 / 62%);
+  transform: none;
+  isolation: isolate;
+  image-rendering: auto;
+  text-rendering: geometricPrecision;
+  width: min(470px, 76%);
+}
+
+@keyframes wa-sharp-in {
+  from {
+    opacity: 0;
+    transform: translate(-32px, 22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.wa-topbar {
+  min-height: 72px;
+  padding: 12px 16px;
+}
+
+.wa-topbar b {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.wa-topbar small,
+.wa-topbar i {
+  font-size: 12px;
+}
+
+.wa-chat {
+  gap: 10px;
+  min-height: 284px;
+  padding: 21px 17px;
+}
+
+.wa-message {
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 10px 12px 8px;
+}
+
+@media (max-width: 1100px) {
+  .credential-law { right: -2%; }
+  .credential-pc { left: -2%; }
+  .credential-network { left: auto; right: -1%; }
+}
+
+@media (max-width: 680px) {
+  .logo-combo-compact {
+    min-width: 164px;
+  }
+
+  .logo-combo-compact .logo-combo-mark {
+    height: 41px;
+    width: 51px;
+  }
+
+  .logo-combo-compact .logo-five-name {
+    font-size: 19px;
+  }
+
+  .credential-card {
+    min-height: 96px;
+    padding: 12px;
+    width: 164px;
+  }
+
+  .credential-card b { font-size: 11px; }
+  .credential-card strong { font-size: 17px; }
+  .credential-card span,
+  .credential-card small { font-size: 7px; }
+
+  .credential-law {
+    right: -3%;
+    top: 10px;
+  }
+
+  .credential-pc {
+    left: -4%;
+    top: 42px;
+  }
+
+  .credential-network {
+    left: auto;
+    right: -3%;
+    top: 156px;
+  }
+
+  .luxe-person {
+    max-height: 410px;
+    right: -4%;
+    top: 18px;
+    width: 104%;
+  }
+
+  .whatsapp-demo {
+    width: 96%;
+  }
+
+  .wa-message {
+    font-size: 13px;
+  }
+
+}
