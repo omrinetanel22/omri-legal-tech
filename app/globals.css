@@ -13,6 +13,7 @@
   --background: #f6faf9;
 }
 
+
 * {
   box-sizing: border-box;
 }
@@ -2401,3 +2402,456 @@ html.motion-ready .lawyer-section.is-visible {
     transform: none;
   }
 }
+
+/* 2026 luxury direction */
+:root {
+  --navy: #0d0d0e;
+  --navy-deep: #070708;
+  --teal: #b89a61;
+  --teal-light: #efe6d4;
+  --gold: #c9aa6f;
+  --ink: #191816;
+  --muted: #756f64;
+  --line: #ded8cd;
+  --paper: #fbf8f1;
+  --background: #f5f1e8;
+}
+
+body {
+  background: #f5f1e8;
+}
+
+.site-header {
+  background: rgb(7 7 8 / 93%);
+  border-bottom: 1px solid rgb(201 170 111 / 22%);
+  box-shadow: 0 10px 34px rgb(0 0 0 / 18%);
+}
+
+.site-header .logo-five,
+.site-header .logo-five-name,
+.site-header .logo-five small,
+.site-header nav a {
+  color: #f5efe3;
+}
+
+.site-header .logo-five-grid {
+  background-image:
+    linear-gradient(rgb(201 170 111 / 35%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(201 170 111 / 35%) 1px, transparent 1px);
+}
+
+.site-header .logo-five-grid i,
+.site-header nav a::after,
+.site-header .logo-five-rule {
+  background: var(--gold);
+}
+
+.header-contact {
+  background: transparent;
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  color: #f7f0e3;
+  letter-spacing: .02em;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 80% 38%, rgb(201 170 111 / 14%), transparent 25%),
+    radial-gradient(circle at 15% 15%, rgb(255 255 255 / 5%), transparent 20%),
+    linear-gradient(132deg, #050506 0%, #111112 58%, #070708 100%);
+  color: #f7f1e7;
+  grid-template-columns: minmax(0, .92fr) minmax(520px, 1.08fr);
+  min-height: 760px;
+  padding-bottom: 92px;
+  padding-top: 100px;
+}
+
+.hero::before {
+  background-image:
+    linear-gradient(rgb(201 170 111 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(201 170 111 / 5%) 1px, transparent 1px);
+  background-size: 46px 46px;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(to left, black, transparent 76%);
+  position: absolute;
+}
+
+.hero-content {
+  align-self: center;
+  z-index: 5;
+}
+
+.hero-kicker {
+  background: rgb(255 255 255 / 4%);
+  border-color: rgb(201 170 111 / 34%);
+  border-radius: 3px;
+  color: #d8bd8a;
+}
+
+.hero-kicker i {
+  background: var(--gold);
+  box-shadow: 0 0 0 5px rgb(201 170 111 / 10%);
+}
+
+.hero h1 {
+  color: #fffaf0;
+  font-size: clamp(48px, 5.15vw, 76px);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.04;
+}
+
+.hero h1 span {
+  color: #d5b777;
+}
+
+.hero-copy {
+  color: #c8c1b5;
+  line-height: 1.75;
+  max-width: 610px;
+}
+
+.hero .button-primary {
+  background: linear-gradient(135deg, #d4b778, #9e7d43);
+  border-radius: 3px;
+  box-shadow: 0 14px 34px rgb(173 136 67 / 24%);
+  color: #0a0a0a;
+}
+
+.hero .button-secondary {
+  background: transparent;
+  border-color: rgb(255 255 255 / 24%);
+  border-radius: 3px;
+  color: #f7efe2;
+}
+
+.hero .text-link,
+.hero .scope-note {
+  color: #b8b0a4;
+}
+
+.hero .scope-note span {
+  background: rgb(201 170 111 / 14%);
+  color: #d7b973;
+}
+
+.luxury-story {
+  align-self: center;
+  min-height: 570px;
+  position: relative;
+}
+
+.luxury-story::before {
+  border: 1px solid rgb(201 170 111 / 25%);
+  border-radius: 50%;
+  content: "";
+  height: 490px;
+  position: absolute;
+  right: 2%;
+  top: 38px;
+  width: 490px;
+}
+
+.luxury-person {
+  bottom: 22px;
+  filter: drop-shadow(0 30px 40px rgb(0 0 0 / 38%));
+  height: 480px;
+  object-fit: contain;
+  object-position: center bottom;
+  position: absolute;
+  right: -72px;
+  width: 610px;
+  z-index: 2;
+}
+
+.credential {
+  backdrop-filter: blur(12px);
+  background: rgb(14 14 15 / 82%);
+  border: 1px solid rgb(201 170 111 / 38%);
+  box-shadow: 0 15px 38px rgb(0 0 0 / 28%);
+  color: #e4c98e;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 14px;
+  position: absolute;
+  z-index: 5;
+}
+
+.credential-law { right: 4%; top: 45px; }
+.credential-tech { right: 1%; top: 96px; }
+.credential-network { right: 7%; top: 147px; }
+
+.whatsapp-phone {
+  background: #111214;
+  border: 4px solid #27282b;
+  border-radius: 31px;
+  bottom: 38px;
+  box-shadow: 0 34px 75px rgb(0 0 0 / 52%);
+  height: 500px;
+  left: -16px;
+  overflow: hidden;
+  position: absolute;
+  transform: rotate(-2.5deg);
+  width: 286px;
+  z-index: 6;
+}
+
+.whatsapp-head {
+  align-items: center;
+  background: #202c33;
+  color: #f2f4f5;
+  display: flex;
+  gap: 9px;
+  height: 64px;
+  padding: 11px 13px;
+}
+
+.whatsapp-head > span:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.whatsapp-head b { font-size: 13px; }
+.whatsapp-head small { color: #b3bec4; font-size: 9px; margin-top: 2px; }
+.whatsapp-head i { color: #aeb9be; font-size: 22px; font-style: normal; }
+
+.whatsapp-avatar {
+  align-items: center;
+  background: #c7a866;
+  border-radius: 50%;
+  color: #101010;
+  display: flex;
+  font-weight: 800;
+  height: 37px;
+  justify-content: center;
+  width: 37px;
+}
+
+.whatsapp-chat {
+  animation: chat-fade 280ms ease both;
+  background:
+    linear-gradient(rgb(12 19 23 / 90%), rgb(12 19 23 / 90%)),
+    radial-gradient(circle, #36444b 1px, transparent 1px);
+  background-size: auto, 17px 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  height: 387px;
+  overflow: hidden;
+  padding: 17px 10px;
+}
+
+.whatsapp-chat p {
+  border-radius: 8px;
+  color: #e9edef;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 86%;
+  padding: 8px 8px 5px;
+}
+
+.whatsapp-chat p.client { align-self: flex-start; background: #202c33; }
+.whatsapp-chat p.omri { align-self: flex-end; background: #005c4b; }
+.whatsapp-chat time { color: #9fb0b7; display: block; font-size: 8px; margin-top: 3px; text-align: left; }
+
+.whatsapp-input {
+  align-items: center;
+  background: #111b21;
+  display: flex;
+  gap: 8px;
+  height: 49px;
+  padding: 7px 8px;
+}
+
+.whatsapp-input span {
+  background: #202c33;
+  border-radius: 20px;
+  color: #8d9ba2;
+  flex: 1;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  padding: 10px 13px;
+}
+
+.whatsapp-input b {
+  align-items: center;
+  background: #00a884;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  height: 34px;
+  justify-content: center;
+  transform: rotate(180deg);
+  width: 34px;
+}
+
+.scenario-tabs {
+  bottom: -18px;
+  display: flex;
+  gap: 7px;
+  left: 0;
+  position: absolute;
+  z-index: 8;
+}
+
+.scenario-tabs button {
+  background: #151516;
+  border: 1px solid rgb(201 170 111 / 26%);
+  border-radius: 999px;
+  color: #a9a197;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 8px 12px;
+}
+
+.scenario-tabs button.active {
+  background: #c9aa6f;
+  border-color: #c9aa6f;
+  color: #080808;
+  font-weight: 800;
+}
+
+@keyframes chat-fade {
+  from { opacity: .25; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.trust-bar {
+  background: #0b0b0c;
+  border-color: rgb(201 170 111 / 20%);
+  color: #f0e9dd;
+}
+
+.trust-bar > div { border-color: rgb(201 170 111 / 18%); }
+.trust-bar small { color: #9c958b; }
+.trust-bar > div > span { color: #d5b777; }
+
+.featured-services {
+  background:
+    radial-gradient(circle at 10% 100%, rgb(201 170 111 / 12%), transparent 24%),
+    #f5f1e8;
+}
+
+.featured-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 42px auto 0;
+  max-width: 1120px;
+}
+
+.featured-card {
+  background: #0d0d0e;
+  border: 1px solid #2c2924;
+  box-shadow: 0 24px 58px rgb(48 41 28 / 16%);
+  color: #f6f0e6;
+  min-height: 430px;
+  overflow: hidden;
+  padding: 42px;
+  position: relative;
+}
+
+.featured-card::before {
+  border: 1px solid rgb(201 170 111 / 17%);
+  border-radius: 50%;
+  content: "";
+  height: 270px;
+  left: -110px;
+  position: absolute;
+  top: -120px;
+  width: 270px;
+}
+
+.featured-number {
+  color: rgb(201 170 111 / 34%);
+  font-size: 54px;
+  left: 28px;
+  line-height: 1;
+  position: absolute;
+  top: 26px;
+}
+
+.featured-icon {
+  align-items: center;
+  border: 1px solid #c9aa6f;
+  color: #d8bb7e;
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-size: 23px;
+  height: 48px;
+  justify-content: center;
+  margin-bottom: 28px;
+  width: 48px;
+}
+
+.featured-card h3 { color: #fff8ed; font-size: 30px; margin: 0 0 14px; }
+.featured-card p { color: #bbb3a7; font-size: 16px; line-height: 1.7; margin: 0; max-width: 510px; }
+.featured-card ul { color: #d7d0c4; line-height: 1.9; list-style: none; margin: 24px 0 30px; padding: 0; }
+.featured-card li::before { color: #c9aa6f; content: "✓"; margin-left: 9px; }
+.featured-card a { border-bottom: 1px solid #c9aa6f; color: #d9bc81; font-weight: 800; padding-bottom: 5px; }
+
+.section-heading .eyebrow { color: #9d7c43; }
+.section-heading h2 { color: #171511; }
+
+@media (max-width: 1120px) {
+  .hero {
+    gap: 18px;
+    grid-template-columns: minmax(0, 1fr) minmax(460px, .96fr);
+    padding-inline: 42px;
+  }
+  .luxury-person { right: -105px; width: 560px; }
+  .whatsapp-phone { left: -32px; transform: rotate(-1deg) scale(.92); }
+  .scenario-tabs { flex-wrap: wrap; left: -15px; max-width: 300px; }
+}
+
+@media (max-width: 820px) {
+  .site-header { grid-template-columns: 1fr auto; }
+  .site-header nav { display: none; }
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 72px 22px 64px;
+  }
+  .hero-content { text-align: center; }
+  .hero-kicker { justify-content: center; }
+  .hero h1 { font-size: clamp(41px, 12.5vw, 60px); }
+  .hero-copy { margin-inline: auto; }
+  .hero-actions, .scope-note { justify-content: center; }
+  .luxury-story { min-height: 590px; margin-top: 18px; }
+  .luxury-story::before { height: 430px; right: 50%; transform: translateX(50%); width: 430px; }
+  .luxury-person { bottom: 15px; right: 50%; transform: translateX(50%); width: 570px; }
+  .whatsapp-phone { bottom: 45px; left: 4%; transform: rotate(-2deg) scale(.9); transform-origin: bottom left; }
+  .credential { right: auto; }
+  .credential-law { right: 3%; top: 78px; }
+  .credential-tech { right: 0; top: 128px; }
+  .credential-network { right: 5%; top: 178px; }
+  .scenario-tabs { bottom: -8px; left: 50%; justify-content: center; max-width: 100%; transform: translateX(-50%); width: 100%; }
+  .featured-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .site-header { min-height: 68px; padding-inline: 14px; }
+  .site-header .logo-five-compact { min-width: 145px; }
+  .site-header .logo-five-name { font-size: 20px; }
+  .header-contact { font-size: 11px; padding: 10px 11px; }
+  .hero h1 { font-size: 42px; }
+  .hero-actions .button { width: 100%; }
+  .hero .text-link { width: 100%; }
+  .luxury-story { min-height: 610px; }
+  .luxury-person { bottom: 38px; right: 42%; width: 510px; }
+  .whatsapp-phone { bottom: 68px; left: -25px; transform: rotate(-2deg) scale(.72); }
+  .credential { font-size: 10px; padding: 8px 9px; }
+  .credential-law { right: 1%; top: 105px; }
+  .credential-tech { right: -2%; top: 148px; }
+  .credential-network { right: 3%; top: 191px; }
+  .scenario-tabs { bottom: 0; flex-wrap: wrap; }
+  .scenario-tabs button { font-size: 10px; padding: 7px 9px; }
+  .featured-card { min-height: auto; padding: 34px 25px; }
+  .featured-card h3 { font-size: 26px; }
+}
+

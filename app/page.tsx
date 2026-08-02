@@ -1,11 +1,41 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const phoneDisplay = "050-6455360";
 const phoneHref = "+972506455360";
 const whatsappHref =
   "https://wa.me/972506455360?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A2%D7%95%D7%9E%D7%A8%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%90%D7%99%D7%AA%D7%9A%20%D7%90%D7%9D%20%D7%94%D7%A9%D7%99%D7%A8%D7%95%D7%AA%20%D7%A9%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%2F%D7%94%20%D7%9E%D7%AA%D7%90%D7%99%D7%9D.";
+
+const chatScenarios = [
+  {
+    label: "מסמך לא ברור",
+    messages: [
+      ["client", "קיבלתי מסמך ואני לא מבין מה רוצים ממני."],
+      ["client", "אני בכלל צריך עורך דין בשביל זה?"],
+      ["omri", "שלח לי צילום ונעשה סדר."],
+      ["omri", "נבדוק מה נדרש. אם צריך עורך דין, אגיד לך."],
+    ],
+  },
+  {
+    label: "חיסכון בזמן ובכסף",
+    messages: [
+      ["client", "יש לי מסמך, כמה קבצים ומערכת שאני לא מסתדר איתה."],
+      ["client", "אני לא רוצה לשלם על משהו שאפשר לעשות לבד."],
+      ["omri", "שלח לי צילום ונעשה סדר."],
+      ["omri", "נבין מה אפשר לבצע לבד ובמה באמת דרוש בעל מקצוע."],
+    ],
+  },
+  {
+    label: "חשש מטעות",
+    messages: [
+      ["client", "אני מפחד להעלות קובץ לא נכון או לפספס משהו."],
+      ["client", "הכול אצלי מבולגן ואני לא יודע מאיפה להתחיל."],
+      ["omri", "נעבור על זה יחד, שלב אחר שלב."],
+      ["omri", "במידת הצורך אפשר להתחבר למחשב שלך באישורך ובנוכחותך."],
+    ],
+  },
+] as const;
 
 const systems = [
   ["⚖️", "נט המשפט", "צפייה, הורדה וסיוע טכני בהעלאת מסמכים"],
@@ -261,6 +291,8 @@ function LogoFive({ compact = false }: { compact?: boolean }) {
 }
 
 export default function Home() {
+  const [scenario, setScenario] = useState(0);
+
   useEffect(() => {
     const root = document.documentElement;
     const revealTargets = document.querySelectorAll(
@@ -323,7 +355,7 @@ export default function Home() {
         </a>
         <nav aria-label="ניווט ראשי">
           <a href="#services">שירותים</a>
-          <a href="#transformation">לפני ואחרי</a>
+          <a href="#featured-services">שירותים חדשים</a>
           <a href="#about">אודות</a>
           <a href="#faq">שאלות</a>
         </nav>
@@ -333,24 +365,18 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-orb orb-one" aria-hidden="true" />
-        <div className="hero-orb orb-two" aria-hidden="true" />
         <div className="hero-content">
           <span className="hero-kicker">
-            <i /> סדר במסמכים. ביטחון במערכות. הסבר בגובה העיניים.
+            <i /> משפטנות ומחשוב, בשפה פשוטה
           </span>
           <h1>
-            מסתבכים עם מסמכים,
-            <br />
-            <span>מערכות מקוונות או קבצים?</span>
-            <br />
-            יש מי שיעזור.
+            כשהמסמך, המערכת
+            <br />או המחשב מסתבכים,
+            <br /><span>עושים סדר.</span>
           </h1>
           <p className="hero-copy">
-            צריכים להגיש מסמך, להפיק נסח טאבו, לסדר קובץ או להבין כיצד
-            משתמשים במערכת מקוונת? תקבלו סיוע אישי, מקצועי וסבלני, שלב אחר
-            שלב.
+            סיוע מקצועי וסבלני במסמכים, במערכות משפטיות וממשלתיות,
+            ב־Word וב־PDF, בהדרכה ובהתחברות מרחוק. פשוט שולחים צילום ומתחילים לעשות סדר.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsappHref} target="_blank">
@@ -368,52 +394,46 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="hero-visual hero-story" aria-label="המחשה: ממכתב מבלבל לפתרון מסודר">
-          <div className="story-bubble bubble-question">
-            קיבלתי את המכתב הזה...
-            <b>מה עושים עכשיו ואיך מגישים אותו?</b>
-          </div>
-          <div className="story-bubble bubble-answer">
-            לא כל מכתב מחייב טיפול משפטי מלא ויקר.
-            <b>לפעמים צריך איש מקצוע שפשוט יעשה סדר.</b>
-          </div>
-
-          {/* The asset is already optimized and transparent; plain img avoids
-              runtime image-proxy work in the edge-hosted site. */}
+        <div className="hero-visual luxury-story" aria-label="שיחת WhatsApp לדוגמה">
+          <div className="credential credential-law">LL.B במשפטים</div>
+          <div className="credential credential-tech">טכנאי מחשבים</div>
+          <div className="credential credential-network">מנהל רשתות</div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="story-person"
-            src="/omri-legal-tech/omri-hero-confused-man.png"
-            alt="אדם מחזיק מכתב ומחפש דרך פשוטה לטפל בו"
-            width={768}
-            height={512}
+            className="luxury-person"
+            src="/omri-legal-tech/character-v2.webp"
+            alt="דמות מאוירת של עומרי נתנאל בחולצה לבנה וכיפה שחורה"
+            width={1536}
+            height={1024}
           />
-
-          <div className="idea-bulb" aria-hidden="true">
-            <span>💡</span>
-            <i />
-            <i />
-            <i />
-          </div>
-
-          <div className="story-phone" aria-label="פנייה לעומרי נתנאל באמצעות הטלפון">
-            <span className="phone-speaker" />
-            <div className="phone-screen">
-              <LogoFive />
-              <div className="phone-chat">
-                <span>שלום, קיבלתי מכתב ואני לא יודע מה לעשות</span>
-                <b>בשמחה. שלח לי צילום ונעשה סדר 👌</b>
-              </div>
-              <span className="phone-check">✓</span>
+          <div className="whatsapp-phone">
+            <div className="whatsapp-head">
+              <span className="whatsapp-avatar">ע</span>
+              <span><b>עומרי נתנאל</b><small>מחובר</small></span>
+              <i>⋮</i>
             </div>
+            <div className="whatsapp-chat" key={scenario}>
+              {chatScenarios[scenario].messages.map(([who, message], index) => (
+                <p className={who} key={`${who}-${index}`}>
+                  {message}<time>{index < 2 ? "10:14" : "10:15"}</time>
+                </p>
+              ))}
+            </div>
+            <div className="whatsapp-input"><span>הקלדת הודעה</span><b>➤</b></div>
           </div>
-
-          <div className="story-result">
-            <span>✓</span>
-            <p>
-              <b>המסמך מסודר ומוכן</b>
-              <small>מהיר, ברור ובמחיר נגיש</small>
-            </p>
+          <div className="scenario-tabs" role="tablist" aria-label="בחירת שיחה לדוגמה">
+            {chatScenarios.map((item, index) => (
+              <button
+                aria-selected={scenario === index}
+                className={scenario === index ? "active" : ""}
+                key={item.label}
+                onClick={() => setScenario(index)}
+                role="tab"
+                type="button"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -446,6 +466,44 @@ export default function Home() {
             <strong>שירות אישי</strong>
             <small>ברור וסבלני</small>
           </p>
+        </div>
+      </section>
+
+      <section className="section featured-services" id="featured-services">
+        <SectionHeading eyebrow="שירותים חדשים" title="גם כשצריך להיכנס פנימה ולעשות את זה יחד">
+          פתרונות מעשיים לאנשים ולעסקים שרוצים תוצאה מקצועית בלי להסתבך עם הצד הטכני.
+        </SectionHeading>
+        <div className="featured-grid">
+          <article className="featured-card remote-card">
+            <span className="featured-number">01</span>
+            <div className="featured-icon">↗</div>
+            <h3>סיוע מרחוק במחשב</h3>
+            <p>
+              התחברות מרחוק לצורך פתרון תקלות, עבודה במערכות מקוונות, סידור מסמכים
+              והדרכה בזמן אמת.
+            </p>
+            <ul>
+              <li>החיבור מתבצע רק באישורכם ובנוכחותכם</li>
+              <li>אתם רואים את כל הפעולות על המסך</li>
+              <li>ניתן להפסיק את החיבור בכל רגע</li>
+            </ul>
+            <a href={whatsappHref} target="_blank">לתיאום סיוע מרחוק ←</a>
+          </article>
+          <article className="featured-card website-card">
+            <span className="featured-number">02</span>
+            <div className="featured-icon">⌘</div>
+            <h3>בניית אתר תדמית לעסק</h3>
+            <p>
+              אתר מקצועי כמו האתר הזה, מותאם לטלפון ומציג בצורה ברורה את העסק,
+              השירותים ודרכי יצירת הקשר.
+            </p>
+            <ul>
+              <li>עיצוב אישי וחיבור לכפתור WhatsApp</li>
+              <li>העלאה לאינטרנט וכתובת קבועה</li>
+              <li>שינויים עתידיים לפי הצורך ובתשלום נפרד</li>
+            </ul>
+            <a href={whatsappHref} target="_blank">רוצה אתר לעסק שלך? ←</a>
+          </article>
         </div>
       </section>
 
