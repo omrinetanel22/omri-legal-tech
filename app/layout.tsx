@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    "https://omri-legal-tech.omri-netanel-1869.chatgpt.site",
+    "https://omrinetanel22.github.io/omri-legal-tech/",
   ),
   title: "עומרי נתנאל | משפטנות ומחשוב",
   description:
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: "he_IL",
     images: [
       {
-        url: "/omri-legal-tech/og-card.svg",
+        url: "og-card.svg",
         width: 1200,
         height: 630,
         alt: "עומרי נתנאל – משפטנות ומחשוב",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     title: "עומרי נתנאל – משפטנות ומחשוב",
     description:
       "מסתבכים עם מסמכים, מערכות מקוונות או קבצים? יש מי שיעזור.",
-    images: ["/omri-legal-tech/og-card.svg"],
+    images: ["og-card.svg"],
   },
   alternates: {
     canonical: "/",
   },
   other: {
-    "codex-preview": "development",
+    "site-owner": "עומרי נתנאל",
   },
   icons: {
     icon: "/omri-legal-tech/favicon.svg",

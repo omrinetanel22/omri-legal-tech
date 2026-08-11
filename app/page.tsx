@@ -44,12 +44,12 @@ const whatsappScenarios = [
   },
   {
     id: "remote",
-    tab: "חשש מטעות",
+    tab: "קובץ מבולגן",
     icon: "✓",
     messages: [
-      ["client", "אני מפחד להעלות קובץ לא נכון ולא יודע איפה ללחוץ."],
-      ["omri", "אפשר להתחבר אליך מרחוק ולעבור על זה יחד."],
-      ["omri", "אתה רואה את כל הפעולות ויכול לעצור את החיבור בכל רגע."],
+      ["client", "יש לי קובץ Word שהמספור והעיצוב בו השתבשו."],
+      ["client", "אפשר להפוך אותו למסמך מסודר וגם ל־PDF?"],
+      ["omri", "כן. שלח לי את הקובץ ואבדוק מה צריך לתקן."],
     ],
   },
 ];
@@ -71,7 +71,6 @@ const serviceGroups = [
       ["📤", "הכנת הקבצים וסיוע טכני בהעלאתם למערכת"],
       ["✅", "בדיקה טכנית שהקבצים צורפו, נקלטו ונפתחים"],
       ["⏱️", "חיסכון בזמן והתמודדות מהירה עם פעולות מסורבלות"],
-      ["🖥️", "אפשרות לסיוע מרחוק על המחשב של הלקוח"],
       ["👣", "ליווי ברור ושלב אחר שלב עד להשלמת הפעולה"],
     ],
   },
@@ -275,6 +274,19 @@ const serviceGroups = [
   },
 ];
 
+const orderedServiceGroups = [
+  "חיסכון בזמן בהכנה ובהגשת מסמכים",
+  "בניית אתרי תדמית לעסקים",
+  "הקלדה, עריכה וליטוש מסמכים",
+  "סיוע טכני במערכות משפטיות וממשלתיות",
+  "Word ומסמכים מקצועיים",
+  "PDF, סריקות ונספחים",
+  "בינה מלאכותית בשילוב מיומנות אנושית",
+  "הדרכה אישית וסבלנית",
+  "סיוע מרחוק במחשב",
+  "שירותים לעורכי דין ולמשרדים",
+].map((title) => serviceGroups.find((group) => group.title === title)!);
+
 const faqs = [
   [
     "האם השירות כולל ייעוץ משפטי?",
@@ -442,17 +454,22 @@ export default function Home() {
         <div className="hero-content">
           <span className="hero-kicker"><i /> משפטנות, מחשוב ושירות אישי במקום אחד</span>
           <h1>
-            חוסכים זמן.
+            הבן הבטיח שיבוא
             <br />
-            <span>מונעים טעויות</span>
+            <span>לסדר לכם את זה,</span>
             <br />
-            ומסיימים את המשימה.
+            אבל הזמן עובר ואתם עדיין תקועים?
           </h1>
           <p className="hero-copy">
-            מסמך שלא ברור מה לעשות איתו, מערכת שלא מסתדרים איתה או קבצים
-            שצריך להפוך לעבודה מסודרת? מקבלים כתובת אחת שמחברת הבנה משפטית,
-            מיומנות מחשוב ושירות בגובה העיניים.
+            צריכים לערוך מסמך, לתקן קובץ Word או PDF, או לבצע פעולה טכנית
+            במחשב? משפטן (לא עורך דין) ואיש מחשבים שיעשה זאת במחיר נגיש —
+            בשביל זה אני כאן.
           </p>
+          <div className="hero-services" aria-label="שירותים מרכזיים">
+            <span>Word ו־PDF</span>
+            <span>מסמכים ומערכות מקוונות</span>
+            <span>בניית אתרי תדמית</span>
+          </div>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsappHref} target="_blank">
               <span>💬</span> פנייה בוואטסאפ
@@ -466,6 +483,9 @@ export default function Home() {
             <a className="text-link" href="#services">
               לכל השירותים <span>←</span>
             </a>
+            <a className="text-link site-offer-link" href="#website-service">
+              רוצים אתר תדמית כמו האתר הזה? <span>←</span>
+            </a>
           </div>
           <p className="scope-note">
             <span>✓</span> סיוע טכני ומנהלי, ללא ייעוץ משפטי וללא ייצוג
@@ -477,19 +497,19 @@ export default function Home() {
           <div className="credentials-wall" aria-label="הכשרות מקצועיות">
             <article className="credential-card credential-law">
               <span>אקדמית אונו</span>
-              <b>תואר LL.B במשפטים</b>
+              <b>בעל תואר LL.B במשפטים</b>
               <strong>LL.B</strong>
               <small>בוגר משפטים</small>
             </article>
             <article className="credential-card credential-pc">
               <span>המכללה למינהל</span>
-              <b>תעודת טכנאי מחשבים</b>
+              <b>בעל תעודת טכנאי מחשבים</b>
               <strong>PC</strong>
               <small>הכשרה בהיקף 80 שעות</small>
             </article>
             <article className="credential-card credential-network">
               <span>המכללה למינהל</span>
-              <b>תעודת מנהל רשתות</b>
+              <b>בעל תעודת מנהל רשתות</b>
               <strong>IT</strong>
               <small>הכשרה בהיקף 200 שעות</small>
             </article>
@@ -524,30 +544,48 @@ export default function Home() {
         <div>
           <span>⚖️</span>
           <p>
-            <strong>תואר LL.B</strong>
+            <strong>בעל תואר LL.B</strong>
             <small>במשפטים</small>
           </p>
         </div>
         <div>
           <span>💻</span>
           <p>
-            <strong>טכנאי מחשבים</strong>
-            <small>ומנהל רשתות</small>
+            <strong>בעל תעודת טכנאי מחשבים</strong>
+            <small>הכשרה מקצועית</small>
           </p>
         </div>
         <div>
           <span>🗂️</span>
           <p>
-            <strong>ניסיון של עשור</strong>
-            <small>בעבודה במשרד עורך דין</small>
+            <strong>בעל תעודת מנהל רשתות</strong>
+            <small>הכשרה מקצועית</small>
           </p>
         </div>
         <div>
-          <span>◉</span>
+          <span>🗂️</span>
           <p>
-            <strong>סיוע מרחוק</strong>
-            <small>באישור ובשליטת הלקוח</small>
+            <strong>למעלה מעשור של ניסיון</strong>
+            <small>בעבודה במשרדי עורכי דין</small>
           </p>
+        </div>
+      </section>
+
+      <section className="section market-section" aria-labelledby="market-title">
+        <div className="market-copy">
+          <span className="eyebrow">המכולת הדיגיטלית שלכם</span>
+          <h2 id="market-title">לא צריך לדעת מראש איך קוראים לשירות.</h2>
+          <p>
+            פשוט שולחים את הקובץ, צילום המסך או תיאור המשימה. אני בודק מה
+            נדרש ומציע דרך מעשית, ברורה ומשתלמת להתקדם.
+          </p>
+        </div>
+        <div className="market-chips" aria-label="דוגמאות לשירותים">
+          <span>תיקון ועיצוב Word</span>
+          <span>עריכת PDF וסריקות</span>
+          <span>טפסים ומערכות מקוונות</span>
+          <span>הקלדה מכתב יד</span>
+          <span>בניית אתר תדמית כזה</span>
         </div>
       </section>
 
@@ -576,86 +614,56 @@ export default function Home() {
       </section>
 
       <section className="section transformation" id="transformation">
-        <SectionHeading eyebrow="דוגמה מהשטח" title="מצילום בטלפון למסמך שמכבד את התוכן">
-          לא משנים את המסר שלכם. מארגנים, מלטשים ומעצבים אותו כך שיהיה ברור,
-          קריא ומקצועי.
+        <SectionHeading eyebrow="לפני ואחרי" title="לא רק להסביר — לראות את ההבדל">
+          שתי דוגמאות אמיתיות לעבודות מסמכים. בכל קובץ מוצג העמוד הראשון בלבד.
         </SectionHeading>
+        <p className="privacy-notice">
+          🔒 הפרטים שונו לשמירה על פרטיותם וסודיותם של הלקוחות.
+        </p>
 
-        <div className="before-after">
-          <article className="example-card before-card">
-            <div className="example-label">
-              <span>לפני</span>
-              <small>צילום שהתקבל מהלקוח</small>
+        <div className="comparison-list">
+          <article className="comparison-case">
+            <div className="comparison-copy">
+              <span>דוגמה 01</span>
+              <h3>מקובץ קורות חיים בסיסי למסמך מעוצב</h3>
+              <p>ארגון התוכן, שיפור ההיררכיה החזותית ועיצוב עמוד מקצועי ומזמין.</p>
             </div>
-            <div className="photo-surface">
-              <div className="raw-paper" aria-label="מסמך גולמי ולא מעוצב">
-                <div className="fold fold-v" />
-                <div className="fold fold-h" />
-                <p className="raw-date">12.5.2026</p>
-                <p>לכבוד: מחלקת שירות</p>
-                <p>הנדון: בקשה לעדכון פרטים</p>
-                <br />
-                <p>שלום רב,</p>
-                <p>
-                  אני פונה אליכם בבקשה לעדכן את הפרטים בהתאם למסמכים שצורפו
-                  ולבדוק את פנייתי.
-                </p>
-                <p>
-                  אבקש לאשר את קבלת המסמכים ולשלוח אלי תשובה לאחר השלמת
-                  הבדיקה.
-                </p>
-                <br />
-                <p>בתודה מראש</p>
-                <div className="scribble">———</div>
-              </div>
+            <div className="comparison-pair">
+              <figure>
+                <figcaption><b>לפני</b><small>קובץ Word בסיסי</small></figcaption>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/omri-legal-tech/examples/resume-before.webp" alt="עמוד ראשון של קורות חיים לפני עריכה ועיצוב" />
+              </figure>
+              <span className="comparison-arrow" aria-hidden="true">←</span>
+              <figure>
+                <figcaption><b>אחרי</b><small>PDF מעוצב ומוכן לשליחה</small></figcaption>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/omri-legal-tech/examples/resume-after.webp" alt="עמוד ראשון של קורות חיים לאחר עריכה ועיצוב" />
+              </figure>
             </div>
           </article>
 
-          <div className="transform-arrow" aria-hidden="true">
-            <span>←</span>
-            <small>עריכה ועיצוב</small>
-          </div>
-
-          <article className="example-card after-card">
-            <div className="example-label">
-              <span>אחרי</span>
-              <small>מסמך מקצועי ומוכן לשליחה</small>
+          <article className="comparison-case">
+            <div className="comparison-copy">
+              <span>דוגמה 02</span>
+              <h3>מכתב יד למסמך משפטי מסודר</h3>
+              <p>הקלדה, בניית מבנה, מספור ועימוד נקי למסמך שקל לקרוא ולהגיש.</p>
             </div>
-            <div className="designed-surface">
-              <div className="designed-paper" aria-label="מסמך מקצועי ומעוצב">
-                <div className="doc-brand">
-                  <LogoFive compact />
-                </div>
-                <div className="doc-rule" />
-                <div className="doc-meta">
-                  <p>
-                    <small>לכבוד</small>
-                    <b>מחלקת שירות</b>
-                  </p>
-                  <time>12 במאי 2026</time>
-                </div>
-                <h3>הנדון: בקשה לעדכון פרטים</h3>
-                <p>שלום רב,</p>
-                <p>
-                  אבקש לעדכן את הפרטים בהתאם למסמכים המצורפים ולבדוק את
-                  פנייתי.
-                </p>
-                <p>
-                  אודה לאישור קבלת המסמכים ולמשלוח תשובה לאחר השלמת הבדיקה.
-                </p>
-                <div className="doc-signature">
-                  <small>בברכה,</small>
-                  <b>הפונה</b>
-                </div>
-                <div className="doc-footer">מסמך לדוגמה • כל הפרטים שונו</div>
-              </div>
+            <div className="comparison-pair">
+              <figure>
+                <figcaption><b>לפני</b><small>צילום כתב יד — טושטש לשמירת סודיות</small></figcaption>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/omri-legal-tech/examples/handwriting-before-private.webp" alt="צילום מטושטש של עמוד בכתב יד לפני הקלדה" />
+              </figure>
+              <span className="comparison-arrow" aria-hidden="true">←</span>
+              <figure>
+                <figcaption><b>אחרי</b><small>PDF מסודר — עמוד ראשון</small></figcaption>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/omri-legal-tech/examples/legal-after.webp" alt="עמוד ראשון של מסמך משפטי לאחר הקלדה ועימוד" />
+              </figure>
             </div>
           </article>
         </div>
-        <p className="privacy-caption">
-          🔒 ההמחשה מבוססת על סוג העבודה שנמסר. כל השמות, התאריכים והפרטים
-          בדוגמה שונו, ואין בה פרטים מזהים של לקוח.
-        </p>
       </section>
 
       <section className="section who-section" id="about">
@@ -689,9 +697,9 @@ export default function Home() {
             <p>מבינים מה עושים עכשיו ומה צריך לשמור להמשך.</p>
           </article>
           <article>
-            <span>🌐</span>
-            <h3>שירות מרחוק</h3>
-            <p>מתחברים רק באישורכם. אתם רואים הכול ויכולים לעצור בכל רגע.</p>
+            <span>🧰</span>
+            <h3>מגוון פתרונות במקום אחד</h3>
+            <p>Word, PDF, מסמכים, מערכות מקוונות ואתרי תדמית.</p>
           </article>
         </div>
       </section>
@@ -704,8 +712,8 @@ export default function Home() {
           בחרו את התחום שמתאים לכם ופתחו אותו לצפייה בפירוט המלא.
         </SectionHeading>
         <div className="service-accordions">
-          {serviceGroups.map((group, index) => (
-            <details className="service-accordion" key={group.title} open={index === 0}>
+          {orderedServiceGroups.map((group, index) => (
+            <details className="service-accordion" id={group.title === "בניית אתרי תדמית לעסקים" ? "website-service" : undefined} key={group.title} open={index === 0}>
               <summary>
                 <span className="service-icon">{group.icon}</span>
                 <span className="service-summary-copy">
@@ -725,7 +733,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                {index === 1 && (
+                {group.title === "סיוע טכני במערכות משפטיות וממשלתיות" && (
                   <p className="inline-disclaimer">
                     הסיוע מתייחס לתפעול המערכת ולטיפול הטכני בקבצים. תוכן
                     המסמך וההחלטה מה להגיש הם באחריות הלקוח או עורך הדין
@@ -747,8 +755,8 @@ export default function Home() {
             <span className="eyebrow">ידע, ניסיון וטכנולוגיה במקום אחד</span>
             <h2>עבודה קפדנית עם הבנה של המסמך ושל המערכת</h2>
             <p>
-              עומרי נתנאל, בעל תואר LL.B במשפטים, תעודת טכנאי מחשבים ותעודת
-              מנהל רשתות, בעל ניסיון של למעלה מעשור בעבודה מעשית במשרדי עורכי
+              עומרי נתנאל, בעל תואר LL.B במשפטים, בעל תעודת טכנאי מחשבים ובעל
+              תעודת מנהל רשתות, בעל ניסיון של למעלה מעשור בעבודה מעשית במשרדי עורכי
               דין, בטיפול במסמכים מקצועיים ובשימוש במערכות משפטיות וממשלתיות.
             </p>
             <p>
