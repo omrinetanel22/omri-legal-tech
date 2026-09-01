@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@fontsource/david-libre/400.css";
 import "@fontsource/david-libre/500.css";
 import "@fontsource/david-libre/700.css";
@@ -52,7 +53,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl">
-      <body>{children}</body>
+      <body>
+        {children}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-V69WVDVRPP"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V69WVDVRPP');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
