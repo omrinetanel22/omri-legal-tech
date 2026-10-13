@@ -5,34 +5,40 @@ import "@fontsource/david-libre/500.css";
 import "@fontsource/david-libre/700.css";
 import "./globals.css";
 
+const shareTitle = "עומרי נתנאל | לא יודעים איך לטפל בעניין?";
+const shareDescription =
+  "לא יודעים איך לטפל בעניין? שלחו לי ואכוון אתכם. משפטן ואיש מחשבים שאינו עורך דין, המשלב ידע משפטי ויכולות מחשוב לסיוע במסמכים ובמערכות מקוונות. שירותים משפטיים באמצעות עורך דין בהתקשרות נפרדת.";
+const shareImage =
+  "https://omrinetanel22.github.io/omri-legal-tech/og-card-20261013.png";
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     "https://omrinetanel22.github.io/omri-legal-tech/",
   ),
-  title: "עומרי נתנאל | משפטנות ומחשוב",
-  description:
-    "סיוע אישי ומקצועי במסמכים, במערכות מקוונות, ב־Word, ב־PDF ובכלים דיגיטליים.",
+  title: shareTitle,
+  description: shareDescription,
   openGraph: {
-    title: "עומרי נתנאל – משפטנות ומחשוב",
-    description:
-      "מסתבכים עם מסמכים, מערכות מקוונות או קבצים? יש מי שיעזור.",
+    title: shareTitle,
+    description: shareDescription,
+    url: "https://omrinetanel22.github.io/omri-legal-tech/",
+    siteName: "עומרי נתנאל – משפטנות ומחשוב",
     type: "website",
     locale: "he_IL",
     images: [
       {
-        url: "og-card.svg",
+        url: shareImage,
+        type: "image/png",
         width: 1200,
         height: 630,
-        alt: "עומרי נתנאל – משפטנות ומחשוב",
+        alt: "לא יודעים איך לטפל בעניין? שלחו לי ואכוון אתכם. עומרי נתנאל – משפטנות ומחשוב",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "עומרי נתנאל – משפטנות ומחשוב",
-    description:
-      "מסתבכים עם מסמכים, מערכות מקוונות או קבצים? יש מי שיעזור.",
-    images: ["og-card.svg"],
+    title: shareTitle,
+    description: shareDescription,
+    images: [shareImage],
   },
   alternates: {
     canonical: "/",

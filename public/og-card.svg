@@ -38,11 +38,13 @@
   <g font-family="Arial, DejaVu Sans, sans-serif" direction="rtl" text-anchor="start">
     <rect x="865" y="76" width="258" height="44" rx="22" fill="#fff" fill-opacity=".78" stroke="#1a8f8a" stroke-opacity=".17"/>
     <circle cx="1097" cy="98" r="6" fill="#27b3a6"/>
-    <text x="1080" y="104" fill="#1a8f8a" font-size="17" font-weight="700">סדר במסמכים. ביטחון במערכות.</text>
-    <text x="1125" y="204" fill="#08233d" font-size="65" font-weight="700">מסתבכים עם מסמכים,</text>
-    <text x="1125" y="286" fill="#1a8f8a" font-size="65" font-weight="700">מערכות מקוונות או קבצים?</text>
-    <text x="1125" y="368" fill="#08233d" font-size="65" font-weight="700">יש מי שיעזור.</text>
-    <text x="1125" y="426" fill="#5f7180" font-size="23">סיוע אישי, מקצועי וסבלני, שלב אחר שלב</text>
+    <text x="1080" y="104" fill="#1a8f8a" font-size="17" font-weight="700">ידע משפטי ויכולות מחשוב</text>
+    <text x="1125" y="204" fill="#08233d" font-size="58" font-weight="700">לא יודעים איך</text>
+    <text x="1125" y="282" fill="#08233d" font-size="58" font-weight="700">לטפל בעניין?</text>
+    <text x="1125" y="360" fill="#1a8f8a" font-size="50" font-weight="700">שלחו לי ואכוון אתכם</text>
+    <text x="1125" y="419" fill="#5f7180" font-size="23">סיוע במסמכים, במחשוב ובמערכות מקוונות</text>
+    <text x="1125" y="459" fill="#5f7180" font-size="22">משפטן ואיש מחשבים • איני עורך דין</text>
+    <text x="1125" y="601" fill="#5f7180" font-size="20">שירותים משפטיים באמצעות עורך דין, במסגרת התקשרות נפרדת</text>
   </g>
 
   <g transform="translate(829 487)">
