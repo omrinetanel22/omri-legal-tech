@@ -3017,6 +3017,30 @@ html.motion-ready .lawyer-section.is-visible {
   margin-top: 24px;
 }
 
+.hero-guidance {
+  background: rgb(255 255 255 / 68%);
+  border: 1px solid rgb(174 127 57 / 25%);
+  border-inline-start: 4px solid #b27d2f;
+  border-radius: 14px;
+  color: #17374d;
+  display: grid;
+  gap: 4px;
+  line-height: 1.55;
+  margin: 24px 0 0;
+  max-width: 690px;
+  padding: 14px 17px;
+}
+
+.hero-guidance strong {
+  color: #17374d;
+  font-size: 19px;
+}
+
+.hero-guidance span {
+  color: #536b78;
+  font-size: 14px;
+}
+
 .hero-services span {
   background: rgb(255 255 255 / 70%);
   border: 1px solid rgb(23 55 77 / 12%);
@@ -3103,6 +3127,58 @@ html.motion-ready .lawyer-section.is-visible {
   content: "✦";
   font-size: 11px;
   margin-inline-end: 10px;
+}
+
+.legal-office-section {
+  background:
+    radial-gradient(circle at 88% 20%, rgb(215 187 130 / 14%), transparent 30%),
+    linear-gradient(135deg, #17191b, #0b0c0d) !important;
+  border-bottom: 1px solid var(--luxe-line);
+  border-top: 1px solid var(--luxe-line);
+  scroll-margin-top: 90px;
+}
+
+.legal-office-section > div:last-child {
+  max-width: 920px;
+}
+
+.legal-office-points {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 24px 0 18px;
+}
+
+.legal-office-points span {
+  background: rgb(215 187 130 / 7%);
+  border: 1px solid rgb(215 187 130 / 16%);
+  border-radius: 13px;
+  color: #efe2c8;
+  font-size: 13px;
+  font-weight: 800;
+  min-height: 58px;
+  padding: 13px 14px;
+}
+
+.legal-office-points span::before {
+  color: var(--champagne);
+  content: "✓";
+  margin-inline-end: 7px;
+}
+
+.luxe-site .legal-office-note {
+  color: #d4c5a7;
+  font-size: 12px;
+}
+
+.legal-office-section .button {
+  margin-top: 12px;
+}
+
+.luxe-site .legal-inline-disclaimer {
+  background: rgb(215 187 130 / 7%);
+  border: 1px solid rgb(215 187 130 / 14%);
+  color: #cfc1a6;
 }
 
 .privacy-notice {
@@ -3228,6 +3304,10 @@ html.motion-ready .lawyer-section.is-visible {
   .market-chips {
     grid-template-columns: 1fr 1fr;
   }
+
+  .legal-office-points {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 680px) {
@@ -3244,6 +3324,10 @@ html.motion-ready .lawyer-section.is-visible {
     padding: 8px 10px;
   }
 
+  .hero-guidance strong {
+    font-size: 17px;
+  }
+
   .site-offer-link {
     border: 0;
     margin: 0;
@@ -3256,6 +3340,10 @@ html.motion-ready .lawyer-section.is-visible {
   }
 
   .market-chips {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-office-points {
     grid-template-columns: 1fr;
   }
 
@@ -3438,26 +3526,15 @@ html.motion-ready .lawyer-section.is-visible {
   inset: 11px;
 }
 
-.credential-card span,
-.credential-card small {
-  color: #715d3f;
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
 .credential-card b {
-  font-size: 15px;
-  margin-top: 5px;
+  font-size: 17px;
+  line-height: 1.35;
+  margin-top: 8px;
 }
 
-.credential-card strong {
-  color: #9c733b;
-  font-family: Arial, sans-serif;
-  font-size: 22px;
-  letter-spacing: 0.08em;
-  margin: 3px 0;
+.credential-card > span {
+  font-size: 30px;
+  line-height: 1;
 }
 
 .credential-law {
@@ -3527,7 +3604,7 @@ html.motion-ready .lawyer-section.is-visible {
 
 .wa-chat {
   gap: 10px;
-  min-height: 284px;
+  min-height: 330px;
   padding: 21px 17px;
 }
 
@@ -3565,10 +3642,8 @@ html.motion-ready .lawyer-section.is-visible {
     width: 164px;
   }
 
-  .credential-card b { font-size: 11px; }
-  .credential-card strong { font-size: 17px; }
-  .credential-card span,
-  .credential-card small { font-size: 7px; }
+  .credential-card b { font-size: 12px; }
+  .credential-card > span { font-size: 23px; }
 
   .credential-law {
     right: -3%;
