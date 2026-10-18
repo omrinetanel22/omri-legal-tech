@@ -497,16 +497,6 @@ export default function Home() {
             שלחו לי את העניין ואעזור להבין מהו המסלול הנכון: סיוע טכני,
             טיפול במסמך או שירות משפטי דרך המשרד.
           </p>
-          <p className="hero-guidance">
-            <strong>לא יודע איך לטפל בעניין?</strong>
-            <span>שלח לי ואכוון אותך.</span>
-          </p>
-          <div className="hero-services" aria-label="שירותים מרכזיים">
-            <span>שירותים משפטיים דרך המשרד</span>
-            <span>Word ו־PDF</span>
-            <span>מסמכים ומערכות מקוונות</span>
-            <span>בניית אתרי תדמית</span>
-          </div>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsappHref} target="_blank">
               <span>💬</span> שלחו לי ואכוון אתכם
