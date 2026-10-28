@@ -371,26 +371,26 @@ function SectionHeading({
 }
 
 function LogoFive({ compact = false }: { compact?: boolean }) {
+  if (!compact) {
+    return (
+      <span className="logo-combo logo-combo-full">
+        <img
+          className="logo-combo-full-image"
+          src="/omri-legal-tech/omri-netanel-logo.png"
+          alt="עומרי נתנאל – משפטנות ומחשוב"
+        />
+      </span>
+    );
+  }
+
   return (
-    <span className={`logo-combo${compact ? " logo-combo-compact" : ""}`}>
-      <svg className="logo-combo-mark" viewBox="0 0 96 76" aria-hidden="true">
-        <defs>
-          <linearGradient id={`logoGold${compact ? "Compact" : "Full"}`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#f1dda9" />
-            <stop offset="1" stopColor="#b69052" />
-          </linearGradient>
-        </defs>
-        <rect className="logo-screen" x="18" y="8" width="69" height="49" rx="7" />
-        <path className="logo-screen-stand" d="M43 57h19m-14 0-4 9m14-9 4 9m-25 0h32" />
-        <path className="logo-scales" d="M53 20v24M38 25h30M42 25l-8 13m4-13 8 13m15-13-8 13m4-13 8 13M31 38h14c-1 5-4 7-7 7s-6-2-7-7Zm22 0h14c-1 5-4 7-7 7s-6-2-7-7Z" />
-        <circle className="logo-scale-pin" cx="53" cy="18" r="3" />
-        <path className="logo-document" d="M9 31h25l10 10v29H9Z" />
-        <path className="logo-document-fold" d="M34 31v10h10" />
-        <path className="logo-document-line" d="M16 48h18M16 55h15" />
-        <path className="logo-pencil" d="m20 66 16-16 5 5-16 16-7 2Z" />
-        <path className="logo-pencil-tip" d="m18 73 2-7 5 5Z" />
-        <path className="logo-send" d="m75 62 13-5-5 13-2-6Z" />
-      </svg>
+    <span className="logo-combo logo-combo-compact">
+      <img
+        className="logo-combo-mark logo-combo-mark-image"
+        src="/omri-legal-tech/omri-netanel-logo-symbol.png"
+        alt=""
+        aria-hidden="true"
+      />
       <span className="logo-combo-copy">
         <span className="logo-five-name">עומרי נתנאל</span>
         <small>משפטנות ומחשוב</small>

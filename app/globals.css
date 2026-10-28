@@ -3632,3 +3632,48 @@ html.motion-ready .lawyer-section.is-visible {
   }
 
 }
+
+/* Updated ON brand logo */
+.logo-combo-mark-image {
+  filter: drop-shadow(0 6px 14px rgb(0 0 0 / 28%));
+  object-fit: contain;
+}
+
+.logo-combo-full {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.logo-combo-full-image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 285px;
+}
+
+.about-symbol .logo-combo-full {
+  background: linear-gradient(145deg, #191b1e, #0d0f10);
+  border: 1px solid rgb(215 187 130 / 32%);
+  border-radius: 26px;
+  box-shadow: 0 25px 55px rgb(0 0 0 / 24%);
+  padding: 18px;
+}
+
+.about-symbol .logo-combo-full-image {
+  width: 310px;
+}
+
+.footer-brand .logo-combo-full-image {
+  width: 235px;
+}
+
+@media (max-width: 680px) {
+  .about-symbol .logo-combo-full-image {
+    width: 250px;
+  }
+
+  .footer-brand .logo-combo-full-image {
+    width: 205px;
+  }
+}
