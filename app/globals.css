@@ -3636,7 +3636,10 @@ html.motion-ready .lawyer-section.is-visible {
 /* Updated ON brand logo */
 .logo-combo-mark-image {
   filter: drop-shadow(0 6px 14px rgb(0 0 0 / 28%));
+  height: 54px;
   object-fit: contain;
+  object-position: center;
+  width: 76px;
 }
 
 .logo-combo-full {
@@ -3649,15 +3652,17 @@ html.motion-ready .lawyer-section.is-visible {
   display: block;
   height: auto;
   max-width: 100%;
+  object-fit: contain;
   width: 285px;
 }
 
 .about-symbol .logo-combo-full {
-  background: linear-gradient(145deg, #191b1e, #0d0f10);
-  border: 1px solid rgb(215 187 130 / 32%);
+  background: #fffaf0;
+  border: 1px solid rgb(215 187 130 / 55%);
   border-radius: 26px;
   box-shadow: 0 25px 55px rgb(0 0 0 / 24%);
-  padding: 18px;
+  overflow: visible;
+  padding: 20px;
 }
 
 .about-symbol .logo-combo-full-image {
@@ -3668,6 +3673,17 @@ html.motion-ready .lawyer-section.is-visible {
   width: 235px;
 }
 
+.footer-brand .logo-combo-full {
+  background: #fffaf0;
+  border: 1px solid rgb(215 187 130 / 42%);
+  border-radius: 18px;
+  padding: 10px;
+}
+
+.site-header .logo-combo-compact {
+  overflow: visible;
+}
+
 @media (max-width: 680px) {
   .about-symbol .logo-combo-full-image {
     width: 250px;
@@ -3675,5 +3691,10 @@ html.motion-ready .lawyer-section.is-visible {
 
   .footer-brand .logo-combo-full-image {
     width: 205px;
+  }
+
+  .logo-combo-compact .logo-combo-mark-image {
+    height: 46px;
+    width: 64px;
   }
 }

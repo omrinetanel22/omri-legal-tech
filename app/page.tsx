@@ -376,7 +376,7 @@ function LogoFive({ compact = false }: { compact?: boolean }) {
       <span className="logo-combo logo-combo-full">
         <img
           className="logo-combo-full-image"
-          src="/omri-legal-tech/omri-netanel-logo.png"
+          src="/omri-legal-tech/omri-netanel-logo.webp"
           alt="עומרי נתנאל – משפטנות ומחשוב"
         />
       </span>
@@ -387,7 +387,7 @@ function LogoFive({ compact = false }: { compact?: boolean }) {
     <span className="logo-combo logo-combo-compact">
       <img
         className="logo-combo-mark logo-combo-mark-image"
-        src="/omri-legal-tech/omri-netanel-logo-symbol.png"
+        src="/omri-legal-tech/omri-netanel-logo-symbol.webp"
         alt=""
         aria-hidden="true"
       />
