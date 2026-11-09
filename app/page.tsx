@@ -844,6 +844,43 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section testimonials-section" id="testimonials">
+        <SectionHeading eyebrow="לקוחות מספרים" title="מה אנשים אומרים">
+          מילים טובות מלקוחות שקיבלו עזרה אישית, ברורה ומקצועית.
+        </SectionHeading>
+        <div className="testimonials-grid">
+          <figure className="testimonial-card">
+            <div className="testimonial-stars" aria-label="5 מתוך 5 כוכבים">
+              ★★★★★
+            </div>
+            <blockquote>
+              ״המקצוענות והשירות היו ברמה הגבוהה ביותר. אכפתי, מסור, אין
+              מילים. תודה רבה על הכול!״
+            </blockquote>
+            <figcaption>
+              <strong>שירה עמרוצי</strong>
+              <span>מתוך ביקורת ב Google</span>
+            </figcaption>
+          </figure>
+          <figure className="testimonial-card">
+            <div className="testimonial-stars" aria-label="5 מתוך 5 כוכבים">
+              ★★★★★
+            </div>
+            <blockquote>
+              ״אדם מדהים. עזר לנו בצורה מקצועית וברורה, בלי מילים מסובכות.
+              ענייני, קצר וקולע — תותח!״
+            </blockquote>
+            <figcaption>
+              <strong>נחמן אליעזר</strong>
+              <span>מתוך ביקורת ב Google</span>
+            </figcaption>
+          </figure>
+        </div>
+        <p className="testimonials-note">
+          הציטוטים קוצרו ונערכו קלות לצורך בהירות, ללא שינוי בתוכן הביקורות.
+        </p>
+      </section>
+
       <section className="section faq-section" id="faq">
         <SectionHeading eyebrow="שאלות נפוצות" title="תשובות קצרות וברורות">
           לחצו על שאלה כדי לפתוח את התשובה.
