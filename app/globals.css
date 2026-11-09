@@ -1713,6 +1713,89 @@ html.motion-ready .lawyer-section.is-visible {
   width: 135px;
 }
 
+.testimonials-section {
+  background: var(--paper);
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.testimonial-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 20px 55px rgb(16 47 79 / 9%);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 280px;
+  padding: 34px 36px 30px;
+  position: relative;
+}
+
+.testimonial-card::before {
+  color: rgb(212 167 77 / 20%);
+  content: "״";
+  font-family: "David Libre", David, serif;
+  font-size: 110px;
+  left: 25px;
+  line-height: 0.8;
+  position: absolute;
+  top: 31px;
+}
+
+.testimonial-stars {
+  color: var(--gold);
+  direction: ltr;
+  font-size: 19px;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-card blockquote {
+  color: var(--navy-deep);
+  flex: 1;
+  font-family: "David Libre", David, serif;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.65;
+  margin: 23px 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-card figcaption {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 18px;
+}
+
+.testimonial-card figcaption strong {
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.testimonial-card figcaption span,
+.testimonials-note {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.testimonials-note {
+  line-height: 1.7;
+  margin: 22px auto 0;
+  max-width: 720px;
+  text-align: center;
+}
+
 .faq-section {
   background: white;
 }
@@ -2227,6 +2310,19 @@ html.motion-ready .lawyer-section.is-visible {
   .section-heading p,
   .who-copy > p {
     font-size: 15px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    min-height: 0;
+    padding: 27px 25px 24px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 20px;
   }
 
   .systems-grid {
@@ -2782,6 +2878,7 @@ html.motion-ready .lawyer-section.is-visible {
 
 .luxe-site .systems-section,
 .luxe-site .services-section,
+.luxe-site .testimonials-section,
 .luxe-site .faq-section {
   background: #0d0f10;
 }
@@ -2789,12 +2886,31 @@ html.motion-ready .lawyer-section.is-visible {
 .luxe-site .system-card,
 .luxe-site .who-points article,
 .luxe-site .service-accordion,
+.luxe-site .testimonial-card,
 .luxe-site .faq-item,
 .luxe-site .contact-details,
 .luxe-site .legal-note {
   background: linear-gradient(145deg, #17191b, #111315);
   border-color: var(--luxe-line);
   box-shadow: 0 18px 50px rgb(0 0 0 / 20%);
+}
+
+.luxe-site .testimonial-card blockquote,
+.luxe-site .testimonial-card figcaption strong {
+  color: var(--ivory);
+}
+
+.luxe-site .testimonial-card figcaption {
+  border-color: var(--luxe-line);
+}
+
+.luxe-site .testimonial-card figcaption span,
+.luxe-site .testimonials-note {
+  color: #8f8b84;
+}
+
+.luxe-site .testimonial-stars {
+  color: var(--champagne);
 }
 
 .luxe-site .system-card > span,
