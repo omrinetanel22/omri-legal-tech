@@ -696,14 +696,14 @@ export default function Home() {
           <article className="comparison-case">
             <div className="comparison-copy">
               <span>דוגמה 02</span>
-              <h3>מכתב יד למסמך משפטי מסודר</h3>
+              <h3>מטיוטה בכתב יד של הלקוח למסמך ערוך ומלוטש להגשה לבית המשפט או להוצאה לפועל</h3>
               <p>הקלדה, בניית מבנה, מספור ועימוד נקי למסמך שקל לקרוא ולהגיש.</p>
             </div>
             <div className="comparison-pair">
               <figure>
-                <figcaption><b>לפני</b><small>צילום כתב יד — טושטש לשמירת סודיות</small></figcaption>
+                <figcaption><b>לפני</b><small>צילום כתב היד המקורי</small></figcaption>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/omri-legal-tech/examples/handwriting-before-private.webp" alt="צילום מטושטש של עמוד בכתב יד לפני הקלדה" />
+                <img src="/omri-legal-tech/examples/handwriting-before-private.webp" alt="טיוטה מקורית בכתב יד של הלקוח לפני עריכה וליטוש" />
               </figure>
               <span className="comparison-arrow" aria-hidden="true">←</span>
               <figure>
