@@ -3125,6 +3125,26 @@ html.motion-ready .lawyer-section.is-visible {
   max-width: 690px;
 }
 
+.systems-specialty {
+  align-items: center;
+  background: rgb(255 255 255 / 62%);
+  border: 1px solid rgb(178 125 47 / 28%);
+  border-radius: 14px;
+  color: #8c642a;
+  display: inline-flex;
+  font-size: clamp(16px, 1.55vw, 20px);
+  font-weight: 800;
+  gap: 9px;
+  line-height: 1.45;
+  margin: 0 0 17px;
+  max-width: 720px;
+  padding: 11px 16px;
+}
+
+.systems-specialty span {
+  flex: 0 0 auto;
+}
+
 .luxe-site .luxe-hero .button-secondary {
   background: rgb(255 255 255 / 72%);
   border-color: rgb(23 55 77 / 16%);
