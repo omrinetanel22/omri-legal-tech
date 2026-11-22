@@ -491,14 +491,14 @@ export default function Home() {
             כמשפטן ואיש מחשבים, עם למעלה מעשור של ניסיון במשרד עורכי דין,
             אני יכול להבין במה הסתבכתם ולכוון אתכם לפתרון הנכון, היעיל והמשתלם.
           </p>
-          <p className="systems-specialty">
-            <span aria-hidden="true">⚖️</span> התמחות בעבודה עם נט המשפט ובמערכות משפטיות וממשלתיות מקוונות
-          </p>
           <p className="hero-copy">
             לא רוצים לשלם אלפי שקלים על פנייה מיותרת לעורך דין?
             <br />
             שלחו לי את העניין ואעזור להבין מהו המסלול הנכון: סיוע טכני,
             טיפול במסמך או שירות משפטי דרך המשרד.
+          </p>
+          <p className="systems-specialty">
+            <span aria-hidden="true">⚖️</span> התמחות בעבודה עם נט המשפט ובמערכות משפטיות וממשלתיות מקוונות
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsappHref} target="_blank">
